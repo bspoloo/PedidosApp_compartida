@@ -32,7 +32,6 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="-143dp"></FrameLayout>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.fragment.app.FragmentContainerView
@@ -47,6 +46,7 @@
         android:fitsSystemWindows="true"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_menu"/>
+        app:menu="@menu/nav_menu" />
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -10,18 +10,33 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import com.example.pedidosapp.databinding.ActivityAuthBinding
 import com.example.pedidosapp.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.analytics.FirebaseAnalytics
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
 
+    private lateinit var binding : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
+
+    //agregamos un analitycs para prueba rapida xd
+        val analitycs = FirebaseAnalytics.getInstance(this)
+        val bundle = Bundle()
+        bundle.putString("message","comenzando app")
+
+        analitycs.logEvent("MainActivity", bundle)
+
+
 
 
         drawerLayout =findViewById(R.id.drawerLayout)
@@ -31,9 +46,9 @@ class MainActivity : AppCompatActivity() {
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
+
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-
         navView.setNavigationItemSelectedListener {
 
             it.isChecked = true
@@ -45,11 +60,14 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_Carrito -> replaceFragment(CarritoFragment(),it.title.toString())
                 R.id.nav_promociones -> replaceFragment(PromocionesFragment(),it.title.toString())
                 R.id.nav_telefono -> replaceFragment(TelefonoFragment(),it.title.toString())
-                R.id.nav_logout -> replaceFragment(logoutFragment(),it.title.toString())
-
+                //R.id.nav_logout -> replaceFragment(logoutFragment(),it.title.toString())
+                R.id.nav_logout -> logout()
             }
             true
         }
+
+        //para el boton "cerrar sesion xd"
+       // binding.logoutgoogle.setOnClickListener{logout()}
     }
     private fun replaceFragment(fragment: Fragment, title: String )
     {
