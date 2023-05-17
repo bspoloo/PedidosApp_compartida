@@ -14,6 +14,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import java.net.CacheRequest
+import android.widget.Button
 
 class AuthActivity : AppCompatActivity() {
 
@@ -24,12 +25,20 @@ class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
-
     //inicializar
         mAuth = FirebaseAuth.getInstance()
         boton()
+
+        val btnGoAdmin = findViewById<Button>(R.id.logginadmin)
+       btnGoAdmin.setOnClickListener {
+           goToAdmin()
+       }
+    }
+    private fun goToAdmin(){
+        //pasamos de este activity al acitity main
+        val i = Intent(this, AdminActivity::class.java )
+        startActivity(i)
     }
 
 
@@ -90,6 +99,4 @@ class AuthActivity : AppCompatActivity() {
 
 
     }
-
-
 }

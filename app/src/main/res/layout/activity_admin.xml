@@ -4,33 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AuthActivity"
-    android:orientation="vertical"
+    tools:context=".AdminActivity"
     android:background="#ffff">
 
-    <Button
-        android:id="@+id/loggingoogle"
-        android:layout_width="219dp"
-        android:layout_height="47dp"
-        android:text="Inicia sesion con Google"
+    <TextView
+        android:layout_width="205dp"
+        android:layout_height="22dp"
+        android:text="Añade un producto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintHorizontal_bias="0.635"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789" />
+        app:layout_constraintVertical_bias="0.045" />
 
-    <Button
-        android:id="@+id/logginadmin"
-        android:layout_width="207dp"
-        android:layout_height="72dp"
-        android:text="Inicia sesion como adiministrador"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reciclerss"
+        android:layout_width="383dp"
+        android:layout_height="193dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.638" />
-
-
+        app:layout_constraintVertical_bias="0.15" />
 </androidx.constraintlayout.widget.ConstraintLayout>

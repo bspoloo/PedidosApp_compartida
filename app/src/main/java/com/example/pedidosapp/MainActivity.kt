@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.example.pedidosapp.databinding.ActivityAuthBinding
 import com.example.pedidosapp.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
@@ -20,8 +21,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
 
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var reciclersss: RecyclerView
 
+    private lateinit var binding : ActivityMainBinding
+    private lateinit var adpaterProd : Adapterproductos
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -35,7 +38,6 @@ class MainActivity : AppCompatActivity() {
         bundle.putString("message","comenzando app")
 
         analitycs.logEvent("MainActivity", bundle)
-
 
 
 
@@ -64,11 +66,16 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_logout -> logout()
             }
             true
+
+
+
+
         }
 
         //para el boton "cerrar sesion xd"
-       // binding.logoutgoogle.setOnClickListener{logout()}
+       // binding.logoutgoogle.setOnClickListener{logout()
     }
+
     private fun replaceFragment(fragment: Fragment, title: String )
     {
         val fragmentManager = supportFragmentManager
