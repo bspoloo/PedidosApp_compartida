@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+    //hola we xd
 
     //agregamos un analitycs para prueba rapida xd
         val analitycs = FirebaseAnalytics.getInstance(this)
