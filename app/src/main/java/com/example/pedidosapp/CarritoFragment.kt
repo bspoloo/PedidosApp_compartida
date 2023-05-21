@@ -27,6 +27,7 @@ class CarritoFragment : Fragment(R.layout.fragment_carrito)
 
        // verrecycler()
     }
+
     private fun verrecycler() {
         adapterusu= Adapterusuarios(cargarlista())
         binding.recyclerss.adapter = adapterusu
