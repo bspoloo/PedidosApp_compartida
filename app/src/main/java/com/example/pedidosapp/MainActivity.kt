@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
 
             when(it.itemId)
             {
+                R.id.nav_admin -> goToAdmin()
                 R.id.nav_home -> goToMenu()
                 R.id.nav_Carrito -> productos()
                 R.id.nav_promociones -> replaceFragment(PromocionesFragment(),it.title.toString())
@@ -82,6 +83,10 @@ class MainActivity : AppCompatActivity() {
     }
     private fun productos(){
         val i = Intent(this, ProductosActivity::class.java)
+        startActivity(i)
+    }
+    private fun goToAdmin(){
+        val i = Intent(this, AdminActivity::class.java)
         startActivity(i)
     }
      private fun verrecycler() {

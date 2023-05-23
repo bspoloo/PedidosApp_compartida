@@ -30,16 +30,16 @@ class AuthActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         boton()
 
-        val btnGoAdmin = findViewById<Button>(R.id.logginadmin)
+        /*val btnGoAdmin = findViewById<Button>(R.id.logginadmin)
        btnGoAdmin.setOnClickListener {
            goToAdmin()
-       }
+       }*/
     }
-    private fun goToAdmin(){
+   /* private fun goToAdmin(){
         //pasamos de este activity al acitity main
         val i = Intent(this, AdminActivity::class.java )
         startActivity(i)
-    }
+    }*/
 
 
     private fun boton()
@@ -89,6 +89,8 @@ class AuthActivity : AppCompatActivity() {
                 task -> if(task.isSuccessful){
                     Log.d("Tag","signInWithCredential:success")
                     val user = mAuth.currentUser?.email.toString()
+
+                Toast.makeText(this, "bienvenido $user", Toast.LENGTH_LONG).show()
                     login(user)
                 }
                 else{

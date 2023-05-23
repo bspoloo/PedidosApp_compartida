@@ -7,6 +7,10 @@
 
     <group android:checkableBehavior="single">
 
+        <item   android:id="@+id/nav_admin"
+            android:title="Entrar como administrador"
+            android:icon="@drawable/baseline_admin_panel_settings_24"/>
+
         <item   android:id="@+id/nav_home"
             android:title="Inicio"
             android:icon="@drawable/baseline_home_24"/>
