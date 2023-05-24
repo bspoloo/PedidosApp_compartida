@@ -8,12 +8,15 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pedidosapp.databinding.ActivityAdminBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.ArrayList
 
 class AdminActivity : AppCompatActivity() {
 
     val db = FirebaseFirestore.getInstance()
     private lateinit var adapterproduct : Adapterproductos
     private lateinit var binding : ActivityAdminBinding
+
+    private lateinit var producList : ArrayList<ItemProduct>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAdminBinding.inflate(layoutInflater)
@@ -33,9 +36,34 @@ class AdminActivity : AppCompatActivity() {
 
 
 
-        verrecycler()
+        //verrecycler()
+        llamarrecyclerview()
     }
 
+    private fun llamarrecyclerview() {
+
+        producList = ArrayList()
+        adapterproduct = Adapterproductos(producList)
+        db.collection("Productos")
+            .get()
+            .addOnSuccessListener { documets ->
+                for(document in documets){
+                    val wallItem = document.toObject(ItemProduct::class.java)
+                    wallItem.idProduct = document.id
+                    wallItem.nomProduct = document["Nombre del producto"].toString()
+                    wallItem.tipProduct = document["Tipo del producto"].toString()
+                    wallItem.preProduct = document["Precio del producto"].toString().toInt()
+                    wallItem.nitProduct = document["Codigo del producto"].toString()
+                    wallItem.imgProduct = document["Imagen del producto"].toString()
+
+                    binding.recyclerssProduct.adapter = adapterproduct
+                    binding.recyclerssProduct.layoutManager = LinearLayoutManager(this)
+                    producList.add(wallItem)
+                }
+
+            }
+
+    }
 
 
     private fun agregarDatos() {
@@ -48,7 +76,9 @@ class AdminActivity : AppCompatActivity() {
 
                 "Nombre del producto" to binding.DatoProducto.text.toString(),
                 "Tipo del producto" to binding.DatoTipo.text.toString(),
-                "Precio del producto" to binding.DatoPrecio.text.toString().toInt()
+                "Precio del producto" to binding.DatoPrecio.text.toString().toInt(),
+                "Codigo del producto" to binding.DatoNitProducto.text.toString(),
+                "Imagen del producto" to "https://waifus.wiki/wp-content/uploads/2021/07/Es2oz-LW4AEqdmd.jpg"
 
             )
             db.collection("Productos").document(binding.DatoNitProducto.text.toString())
@@ -68,27 +98,23 @@ class AdminActivity : AppCompatActivity() {
     private fun eliminarProducto() {
 
         val datoBuscar =binding.DatoBuscarProducto.text.toString()
-        val docRef = db.collection("Productos").document( binding.DatoBuscarProducto.text.toString()).toString()
+       // val docRef = db.collection("Productos").document( binding.DatoBuscarProducto.text.toString()).toString()
 
-        if(binding.DatoBuscarProducto.text.toString().isBlank() ) {
+        if(binding.DatoBuscarProducto.text.toString().isBlank() ){
             Toast.makeText(this, "No puso el Codigo de producto", Toast.LENGTH_LONG).show()
         }
         else{
-            if(docRef == datoBuscar)
-            {
+
                 db.collection("Productos").document( binding.DatoBuscarProducto.text.toString())
                     .delete()
                     .addOnSuccessListener { Log.d("Tag","se Elimino correctamente") }
                     .addOnFailureListener {e-> Log.w("Tag","Error al borrar el documento $e")}
-
                 Toast.makeText(this, "Se elimino correctamente $datoBuscar", Toast.LENGTH_LONG).show()
                 binding.DatoBuscarProducto.text.clear()
-            }
-            else{
-                Toast.makeText(this, "No existe producto $datoBuscar", Toast.LENGTH_LONG).show()
-            }
+
 
         }
+
     }
 
 

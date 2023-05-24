@@ -29,13 +29,18 @@ class Adapterproductos(private var items: MutableList<ItemProduct>):
         holder.preP.text = item.preProduct.toString()
         holder.nitP.text = item.nitProduct
 
-        Glide.with(holder.itemView.context).load(item.ImgProduct).circleCrop().into(holder.fotP)
-        holder.botnP.setOnClickListener{
+
+        Glide.with(holder.itemView.context).load(item.imgProduct).circleCrop().into(holder.fotP)
+        holder.botnPP.setOnClickListener{
             val activity = it.context //as AppCompatActivity
             Toast.makeText(activity,"ollo, soy ${item.nomProduct} ${item.tipProduct}", Toast.LENGTH_LONG).show()
             println("ollo, soy ${item.nomProduct} ${item.tipProduct}")
         }
 
+        holder.botnPE.setOnClickListener{
+            items.removeAt(position)
+            notifyDataSetChanged()
+        }
     }
 
     override fun getItemCount(): Int {
@@ -48,7 +53,8 @@ class Adapterproductos(private var items: MutableList<ItemProduct>):
         val preP: TextView = view.findViewById(R.id.precioProducto)
         val nitP: TextView = view.findViewById(R.id.codigoProducto)
         val fotP: ImageView = view.findViewById(R.id.fotoProducto)
-        val botnP: Button = view.findViewById(R.id.boton)
+        val botnPP: Button = view.findViewById(R.id.botonPrecioname)
+        val botnPE: Button = view.findViewById(R.id.botonEliminame)
 
     }
 
