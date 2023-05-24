@@ -1,5 +1,7 @@
 package com.example.pedidosapp
 
+import android.content.DialogInterface
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,8 +9,11 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.firestore.FirebaseFirestore
 
 class Adapterproductos(private var items: MutableList<ItemProduct>):
     RecyclerView.Adapter<Adapterproductos.ViewHolder>(){
@@ -35,11 +40,37 @@ class Adapterproductos(private var items: MutableList<ItemProduct>):
             val activity = it.context //as AppCompatActivity
             Toast.makeText(activity,"ollo, soy ${item.nomProduct} ${item.tipProduct}", Toast.LENGTH_LONG).show()
             println("ollo, soy ${item.nomProduct} ${item.tipProduct}")
+
         }
 
         holder.botnPE.setOnClickListener{
-            items.removeAt(position)
-            notifyDataSetChanged()
+            /*items.removeAt(position)
+            notifyDataSetChanged()*/
+
+            val db = FirebaseFirestore.getInstance()
+            val activity = it.context
+            val builder = AlertDialog.Builder(activity)
+
+            builder.setTitle("Eliminar")
+            builder.setMessage("Estas seguro de Eliminar este Producto?")
+            builder.setPositiveButton("si"){ dialogInterface : DialogInterface, i: Int->
+
+                val elim= db.collection("Productos").document(item.idProduct)
+                db.runBatch{batch ->
+                    batch.delete(elim)
+                }.addOnCompleteListener{
+                    Toast.makeText(activity,"Eliminado correctamente", Toast.LENGTH_LONG).show()
+                    println("se elimino el producto ")
+
+                    items.removeAt(position)
+                    notifyDataSetChanged()
+
+                }
+            }
+            builder.setNegativeButton("no"){dialogInterface : DialogInterface, i: Int->
+                //no pasa nada xd
+            }
+            builder.show()
         }
     }
 

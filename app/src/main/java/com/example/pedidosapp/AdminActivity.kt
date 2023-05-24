@@ -26,16 +26,13 @@ class AdminActivity : AppCompatActivity() {
         val borrarProducto = findViewById<Button>(R.id.buttonEliminar) as Button
 
 
+
         guardarDatos.setOnClickListener(){
             agregarDatos()
-
         }
         borrarProducto.setOnClickListener(){
             eliminarProducto()
         }
-
-
-
         //verrecycler()
         llamarrecyclerview()
     }
@@ -45,6 +42,7 @@ class AdminActivity : AppCompatActivity() {
         producList = ArrayList()
         adapterproduct = Adapterproductos(producList)
         db.collection("Productos")
+            .orderBy("Nombre del producto")
             .get()
             .addOnSuccessListener { documets ->
                 for(document in documets){
@@ -81,17 +79,33 @@ class AdminActivity : AppCompatActivity() {
                 "Imagen del producto" to "https://waifus.wiki/wp-content/uploads/2021/07/Es2oz-LW4AEqdmd.jpg"
 
             )
-            db.collection("Productos").document(binding.DatoNitProducto.text.toString())
-                .set(user)
-                .addOnSuccessListener { Log.d("Tag","se guardo correctamente") }
+            db.collection("Productos")
+                .add(user)
+                .addOnSuccessListener {  documentReference ->
+                    Toast.makeText(this, "Producto agregado correctamente", Toast.LENGTH_LONG).show()
+                    println("agregado correctamente xd")
+
+                    /*producList.add(ItemProduct(documentReference.id, binding.DatoProducto.text.toString(),
+                                                                    binding.DatoTipo.text.toString(),
+                                                                    binding.DatoPrecio.text.toString().toInt(),
+                                                                    binding.DatoNitProducto.text.toString(),
+                                                                    "https://waifus.wiki/wp-content/uploads/2021/07/Es2oz-LW4AEqdmd.jpg"))*/
+
+
+                    llamarrecyclerview()
+
+                    adapterproduct.notifyDataSetChanged()
+                }
                 .addOnFailureListener {e-> Log.w("Tag","Error $e")}
+
+
 
             binding.DatoProducto.text.clear()
             binding.DatoTipo.text.clear()
             binding.DatoPrecio.text.clear()
             binding.DatoNitProducto.text.clear()
 
-            Toast.makeText(this, "Producto agregado correctamente", Toast.LENGTH_LONG).show()
+
         }
 
     }
@@ -120,7 +134,7 @@ class AdminActivity : AppCompatActivity() {
 
 
 
-    private fun verrecycler() {
+   /* private fun verrecycler() {
         adapterproduct= Adapterproductos(cargarlista())
         binding.recyclerssProduct.adapter = adapterproduct
         binding.recyclerssProduct.layoutManager = LinearLayoutManager(this)
@@ -138,5 +152,5 @@ class AdminActivity : AppCompatActivity() {
 
         return lista
 
-    }
+    }*/
 }
