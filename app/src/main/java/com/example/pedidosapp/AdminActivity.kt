@@ -32,6 +32,7 @@ class AdminActivity : AppCompatActivity() {
         }
         borrarProducto.setOnClickListener(){
             eliminarProducto()
+            llamarrecyclerview()
         }
         //verrecycler()
         llamarrecyclerview()
@@ -121,14 +122,12 @@ class AdminActivity : AppCompatActivity() {
 
                 db.collection("Productos").document( binding.DatoBuscarProducto.text.toString())
                     .delete()
-                    .addOnSuccessListener { Log.d("Tag","se Elimino correctamente") }
+                    .addOnSuccessListener { Log.d("Tag","se Elimino correctamente $datoBuscar") }
                     .addOnFailureListener {e-> Log.w("Tag","Error al borrar el documento $e")}
                 Toast.makeText(this, "Se elimino correctamente $datoBuscar", Toast.LENGTH_LONG).show()
                 binding.DatoBuscarProducto.text.clear()
-
-
+               // llamarrecyclerview()
         }
-
     }
 
 
