@@ -6,31 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".AuthActivity"
     android:orientation="vertical"
-    android:background="#ffff">
+    android:background="#EC0C5B">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="413dp"
+        android:layout_height="412dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.213"
+        app:srcCompat="@drawable/logoinicio" />
 
     <Button
         android:id="@+id/loggingoogle"
         android:layout_width="219dp"
-        android:layout_height="47dp"
+        android:layout_height="72dp"
         android:text="Inicia sesion con Google"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789" />
+        app:layout_constraintVertical_bias="0.946"
+        app:icon="@drawable/baseline_email_24"/>
 
     <Button
         android:id="@+id/logginadmin"
         android:layout_width="207dp"
         android:layout_height="72dp"
         android:text="Ingresar sin cuenta"
+        app:icon="@drawable/baseline_person_pin_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.638" />
+        app:layout_constraintVertical_bias="0.801" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
