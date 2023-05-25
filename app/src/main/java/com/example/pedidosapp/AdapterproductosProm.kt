@@ -15,18 +15,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
 
-class Adapterproductos(private var items: MutableList<ItemProduct>):
-    RecyclerView.Adapter<Adapterproductos.ViewHolder>(){
+class AdapterproductosProm(private var items: MutableList<ItemProduct>):
+    RecyclerView.Adapter<AdapterproductosProm.ViewHolder>(){
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): Adapterproductos.ViewHolder {
-        return Adapterproductos.ViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.itemproduct,parent,false)
+    ): AdapterproductosProm.ViewHolder {
+        return AdapterproductosProm.ViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.itemproductprom,parent,false)
         )
     }
 
-    override fun onBindViewHolder(holder: Adapterproductos.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AdapterproductosProm.ViewHolder, position: Int) {
         val item = items[position]
 
         holder.nomP.text = item.nomProduct
@@ -43,36 +43,6 @@ class Adapterproductos(private var items: MutableList<ItemProduct>):
 
         }
 
-        holder.botnPE.setOnClickListener{
-            /*items.removeAt(position)
-            notifyDataSetChanged()*/
-
-            val db = FirebaseFirestore.getInstance()
-            val activity = it.context
-            val builder = AlertDialog.Builder(activity)
-
-
-            builder.setTitle("Eliminar")
-            builder.setMessage("Estas seguro de Eliminar este Producto?")
-            builder.setPositiveButton("si"){ dialogInterface : DialogInterface, i: Int->
-
-                val elim= db.collection("Productos").document(item.idProduct)
-                db.runBatch{batch ->
-                    batch.delete(elim)
-                }.addOnCompleteListener{
-                    Toast.makeText(activity,"Eliminado correctamente", Toast.LENGTH_LONG).show()
-                    println("se elimino el producto ")
-
-                    items.removeAt(position)
-                    notifyDataSetChanged()
-
-                }
-            }
-            builder.setNegativeButton("no"){dialogInterface : DialogInterface, i: Int->
-                //no pasa nada xd
-            }
-            builder.show()
-        }
     }
 
     override fun getItemCount(): Int {
@@ -86,7 +56,7 @@ class Adapterproductos(private var items: MutableList<ItemProduct>):
         val nitP: TextView = view.findViewById(R.id.codigoProducto)
         val fotP: ImageView = view.findViewById(R.id.fotoProducto)
         val botnPP: Button = view.findViewById(R.id.botonPrecioname)
-        val botnPE: Button = view.findViewById(R.id.botonEliminame)
+       // val botnPE: Button = view.findViewById(R.id.botonEliminame)
 
     }
 

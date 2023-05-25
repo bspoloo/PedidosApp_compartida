@@ -8,10 +8,13 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.pedidosapp.databinding.ActivityAdminBinding
 import com.example.pedidosapp.databinding.ActivityMainBinding
 import com.example.pedidosapp.databinding.ActivityProductosBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.firestore.FirebaseFirestore
+import java.util.ArrayList
 
 class ProductosActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
@@ -20,6 +23,13 @@ class ProductosActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityProductosBinding
     private lateinit var adapterusu : Adapterusuarios
+
+
+
+    val db = FirebaseFirestore.getInstance()
+    private lateinit var adapterproduct : AdapterproductosProm
+    private lateinit var producList : ArrayList<ItemProduct>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,37 +42,35 @@ class ProductosActivity : AppCompatActivity() {
         // binding.logoutgoogle.setOnClickListener{logout()
 
 
-       // verrecycler()
+        //verrecycler()
+        llamarrecyclerview()
+
     }
 
+    private fun llamarrecyclerview() {
 
+        producList = ArrayList()
+        adapterproduct = AdapterproductosProm(producList)
+        db.collection("Productos")
+            .whereEqualTo("Tipo del producto", "Caliente")
+            .get()
+            .addOnSuccessListener { documets ->
+                for(document in documets){
+                    val wallItem = document.toObject(ItemProduct::class.java)
+                    wallItem.idProduct = document.id
+                    wallItem.nomProduct = document["Nombre del producto"].toString()
+                    wallItem.tipProduct = document["Tipo del producto"].toString()
+                    wallItem.preProduct = document["Precio del producto"].toString().toInt()
+                    wallItem.nitProduct = document["Codigo del producto"].toString()
+                    wallItem.imgProduct = document["Imagen del producto"].toString()
 
+                    binding.recyclerssProduct.adapter = adapterproduct
+                    binding.recyclerssProduct.layoutManager = LinearLayoutManager(this)
+                    producList.add(wallItem)
+                }
+            }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
 
@@ -72,8 +80,8 @@ class ProductosActivity : AppCompatActivity() {
     }
     private fun verrecycler() {
         adapterusu= Adapterusuarios(cargarlista())
-        binding.recyclerss.adapter = adapterusu
-        binding.recyclerss.layoutManager = LinearLayoutManager(this)
+        binding.recyclerssProduct.adapter = adapterusu
+        binding.recyclerssProduct.layoutManager = LinearLayoutManager(this)
     }
 
     private fun cargarlista(): MutableList<ItemUsu> {
