@@ -32,8 +32,39 @@ class ProductosActivity : AppCompatActivity() {
         // binding.logoutgoogle.setOnClickListener{logout()
 
 
-        verrecycler()
+       // verrecycler()
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private fun goToMenu(){
         val i = Intent(this, MainActivity::class.java)

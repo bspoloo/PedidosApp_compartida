@@ -32,6 +32,7 @@ class AdminActivity : AppCompatActivity() {
         guardarDatos.setOnClickListener(){
             agregarDatos()
         }
+
         borrarProducto.setOnClickListener(){
             eliminarProducto()
             llamarrecyclerview()
@@ -94,13 +95,11 @@ class AdminActivity : AppCompatActivity() {
                                                                     binding.DatoPrecio.text.toString().toInt(),
                                                                     binding.DatoNitProducto.text.toString(),
                                                                     "https://waifus.wiki/wp-content/uploads/2021/07/Es2oz-LW4AEqdmd.jpg"))*/
-
-
                     llamarrecyclerview()
-
                     adapterproduct.notifyDataSetChanged()
                 }
                 .addOnFailureListener {e-> Log.w("Tag","Error $e")}
+
 
             binding.DatoProducto.text.clear()
             binding.DatoTipo.text.clear()
