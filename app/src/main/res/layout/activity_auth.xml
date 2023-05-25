@@ -24,7 +24,7 @@
         android:id="@+id/logginadmin"
         android:layout_width="207dp"
         android:layout_height="72dp"
-        android:text="Inicia sesion como adiministrador"
+        android:text="Ingresar sin cuenta"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"

@@ -25,21 +25,22 @@ class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
     //inicializar
         mAuth = FirebaseAuth.getInstance()
         boton()
 
-        /*val btnGoAdmin = findViewById<Button>(R.id.logginadmin)
+        val btnGoAdmin = findViewById<Button>(R.id.logginadmin)
        btnGoAdmin.setOnClickListener {
            goToAdmin()
-       }*/
+       }
     }
-   /* private fun goToAdmin(){
+   private fun goToAdmin(){
         //pasamos de este activity al acitity main
-        val i = Intent(this, AdminActivity::class.java )
+        val i = Intent(this, MainActivity::class.java )
         startActivity(i)
-    }*/
+    }
 
 
     private fun boton()

@@ -16,15 +16,17 @@ class AdminActivity : AppCompatActivity() {
     private lateinit var adapterproduct : Adapterproductos
     private lateinit var binding : ActivityAdminBinding
 
+
     private lateinit var producList : ArrayList<ItemProduct>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAdminBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
         val guardarDatos = findViewById<Button>(R.id.buttonGuardar) as Button
         val borrarProducto = findViewById<Button>(R.id.buttonEliminar) as Button
-
 
 
         guardarDatos.setOnClickListener(){
@@ -36,6 +38,7 @@ class AdminActivity : AppCompatActivity() {
         }
         //verrecycler()
         llamarrecyclerview()
+
     }
 
     private fun llamarrecyclerview() {
@@ -59,13 +62,13 @@ class AdminActivity : AppCompatActivity() {
                     binding.recyclerssProduct.layoutManager = LinearLayoutManager(this)
                     producList.add(wallItem)
                 }
-
             }
 
     }
 
 
     private fun agregarDatos() {
+
         if(binding.DatoTipo.text.toString().isBlank() or binding.DatoPrecio.text.toString().isBlank() or binding.DatoNitProducto.text.toString().isBlank()) {
             Toast.makeText(this, "Por favor rellene los campos", Toast.LENGTH_LONG).show()
         }
@@ -99,16 +102,12 @@ class AdminActivity : AppCompatActivity() {
                 }
                 .addOnFailureListener {e-> Log.w("Tag","Error $e")}
 
-
-
             binding.DatoProducto.text.clear()
             binding.DatoTipo.text.clear()
             binding.DatoPrecio.text.clear()
             binding.DatoNitProducto.text.clear()
 
-
         }
-
     }
     private fun eliminarProducto() {
 
@@ -126,7 +125,10 @@ class AdminActivity : AppCompatActivity() {
                     .addOnFailureListener {e-> Log.w("Tag","Error al borrar el documento $e")}
                 Toast.makeText(this, "Se elimino correctamente $datoBuscar", Toast.LENGTH_LONG).show()
                 binding.DatoBuscarProducto.text.clear()
-               // llamarrecyclerview()
+
+               llamarrecyclerview()
+                adapterproduct.notifyDataSetChanged()
+
         }
     }
 

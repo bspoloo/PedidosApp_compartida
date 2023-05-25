@@ -17,6 +17,9 @@
         android:theme="@style/Theme.PedidosApp"
         tools:targetApi="31">
         <activity
+            android:name=".PromocionesActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProductosActivity"
             android:exported="false" />
         <activity

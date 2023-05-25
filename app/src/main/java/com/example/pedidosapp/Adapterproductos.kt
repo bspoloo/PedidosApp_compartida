@@ -51,6 +51,7 @@ class Adapterproductos(private var items: MutableList<ItemProduct>):
             val activity = it.context
             val builder = AlertDialog.Builder(activity)
 
+
             builder.setTitle("Eliminar")
             builder.setMessage("Estas seguro de Eliminar este Producto?")
             builder.setPositiveButton("si"){ dialogInterface : DialogInterface, i: Int->
@@ -84,6 +85,7 @@ class Adapterproductos(private var items: MutableList<ItemProduct>):
         val preP: TextView = view.findViewById(R.id.precioProducto)
         val nitP: TextView = view.findViewById(R.id.codigoProducto)
         val fotP: ImageView = view.findViewById(R.id.fotoProducto)
+
         val botnPP: Button = view.findViewById(R.id.botonPrecioname)
         val botnPE: Button = view.findViewById(R.id.botonEliminame)
 
