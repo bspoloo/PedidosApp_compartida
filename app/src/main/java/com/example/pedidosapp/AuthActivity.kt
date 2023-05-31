@@ -15,12 +15,15 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import java.net.CacheRequest
 import android.widget.Button
-
+import com.example.pedidosapp.AdminActivity
 class AuthActivity : AppCompatActivity() {
 
-    private lateinit var mAuth : FirebaseAuth
+
     private val Google_SIGN_IN = 100
     private lateinit var binding : ActivityAuthBinding
+
+    //var user: String = mAuth.currentUser?.email.toString()
+    lateinit var mAuth : FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +39,7 @@ class AuthActivity : AppCompatActivity() {
            goToAdmin()
        }
     }
-   private fun goToAdmin(){
+   public fun goToAdmin(){
         //pasamos de este activity al acitity main
         val i = Intent(this, MainActivity::class.java )
         startActivity(i)
@@ -84,12 +87,13 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun firebaseAuthWithGoogle(idToken: String) {
+
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         mAuth.signInWithCredential(credential)
             .addOnCompleteListener(this){
                 task -> if(task.isSuccessful){
                     Log.d("Tag","signInWithCredential:success")
-                    val user = mAuth.currentUser?.email.toString()
+                    val user = mAuth.currentUser?.email.toString()   //no seria esa wea?, es variable local, pero no puedes llamarla a desde otra clase
 
                 Toast.makeText(this, "bienvenido $user", Toast.LENGTH_LONG).show()
                     login(user)
@@ -99,7 +103,10 @@ class AuthActivity : AppCompatActivity() {
                     Toast.makeText(this, "no se pudo logear xd", Toast.LENGTH_LONG).show()
                 }
             }
-
-
     }
+
+//normal? xd, si xd, aver, tendras que hacerlo desde emulador xd, tengo clases xd
+    //daele, actualizalo una vez mas el github de mi ya valió madres dnuevo xd, hazle pos un pull xd, si te conectas a mi rama xd
+    //no le ..
+
 }

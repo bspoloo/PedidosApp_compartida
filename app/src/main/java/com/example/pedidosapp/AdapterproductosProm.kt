@@ -11,12 +11,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
 
 class AdapterproductosProm(private var items: MutableList<ItemProduct>):
     RecyclerView.Adapter<AdapterproductosProm.ViewHolder>(){
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -24,6 +26,7 @@ class AdapterproductosProm(private var items: MutableList<ItemProduct>):
         return AdapterproductosProm.ViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.itemproductprom,parent,false)
         )
+
     }
 
     override fun onBindViewHolder(holder: AdapterproductosProm.ViewHolder, position: Int) {
@@ -37,7 +40,12 @@ class AdapterproductosProm(private var items: MutableList<ItemProduct>):
 
         Glide.with(holder.itemView.context).load(item.imgProduct).circleCrop().into(holder.fotP)
         holder.botnPP.setOnClickListener{
+
+            holder.actV.visibility = View.GONE
+            holder.carV.visibility = View.VISIBLE
+
             val activity = it.context //as AppCompatActivity
+
             Toast.makeText(activity,"ollo, soy ${item.nomProduct} ${item.tipProduct}", Toast.LENGTH_LONG).show()
             println("ollo, soy ${item.nomProduct} ${item.tipProduct}")
 
@@ -56,7 +64,12 @@ class AdapterproductosProm(private var items: MutableList<ItemProduct>):
         val nitP: TextView = view.findViewById(R.id.codigoProducto)
         val fotP: ImageView = view.findViewById(R.id.fotoProducto)
         val botnPP: Button = view.findViewById(R.id.botonPrecioname)
+
+        val carV : CardView = view.findViewById(R.id.ventanaPedido)
+        val actV : CardView = view.findViewById(R.id.actualCard)
+
        // val botnPE: Button = view.findViewById(R.id.botonEliminame)
+
 
     }
 

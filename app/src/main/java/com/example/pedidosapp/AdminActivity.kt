@@ -7,15 +7,25 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pedidosapp.databinding.ActivityAdminBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.ArrayList
+import com.example.pedidosapp.AuthActivity
 
 class AdminActivity : AppCompatActivity() {
 
     val db = FirebaseFirestore.getInstance()
+
+
     private lateinit var adapterproduct : Adapterproductos
     private lateinit var binding : ActivityAdminBinding
+
     private lateinit var producList : ArrayList<ItemProduct>
+
+    private lateinit var mAuth : FirebaseAuth
+
+    //lateinit var mAuth: FirebaseAuth
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +37,8 @@ class AdminActivity : AppCompatActivity() {
 
         val guardarDatos = findViewById<Button>(R.id.buttonGuardar) as Button
         val borrarProducto = findViewById<Button>(R.id.buttonEliminar) as Button
+        val VerEmail = findViewById<Button>(R.id.buttonVerEmail) as Button
+
 
 
         guardarDatos.setOnClickListener(){
@@ -40,6 +52,13 @@ class AdminActivity : AppCompatActivity() {
         //verrecycler()
         llamarrecyclerview()
 
+        VerEmail.setOnClickListener {
+
+            Toast.makeText(this, "aqui se ve el email xd ", Toast.LENGTH_LONG).show()
+
+
+            //chale
+        }
     }
 
     private fun llamarrecyclerview() {
@@ -153,4 +172,11 @@ class AdminActivity : AppCompatActivity() {
         return lista
 
     }*/
+
+
+
+    //ejemplo
+
+
+
 }
