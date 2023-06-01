@@ -17,8 +17,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pedidosapp.databinding.ActivityAuthBinding
 import com.example.pedidosapp.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.analytics.FirebaseAnalytics
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
@@ -28,10 +30,48 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     private lateinit var adapterusu : Adapterusuarios
 
+
+
+    //Navegacion Inferior
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val view= binding.root
+        setContentView(view)
+
+
+
+        //Navegacion Inferior
+        //var adminfragment = AdminActivity()
+        var homefragment = HomeFragment()
+        var pedidosfragment = CarritoFragment()
+        var logoutfragment = logoutFragment()
+
+
+        binding.bottomNavigationView.setOnNavigationItemSelectedListener {
+                    when(it.itemId){
+                        R.id.Hogar -> {
+                            setCurrentFragment(homefragment)
+                            true
+                        }
+                        R.id.pedidos -> {
+                            setCurrentFragment(pedidosfragment)
+                            true
+                        }
+                        R.id.logout -> {
+                            setCurrentFragment(logoutfragment)
+                            true
+                        }
+                        else -> false
+
+                    }
+        }
+        //Navegacion Inferior
+
+
+
+
 
 
     //agregamos un analitycs para prueba rapida xd
@@ -68,6 +108,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
 
+
         }
 
         //para el boton "cerrar sesion xd"
@@ -76,6 +117,16 @@ class MainActivity : AppCompatActivity() {
 
         verrecycler()
     }
+
+    //Navegacion Inferior
+    private fun setCurrentFragment(fragment: Fragment){
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.FragmentContainerView, fragment)
+            commit()
+        }
+    }
+    //Navegacion Inferior
+
 
     private fun goToMenu(){
         val i = Intent(this, MainActivity::class.java)

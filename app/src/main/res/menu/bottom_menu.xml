@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item android:id="@+id/nav_admin"
+            android:title="Modo administrador"
+            android:icon="@drawable/admin_mode"/>
+
+        <item android:id="@+id/Hogar"
+            android:title="Hogar"
+            android:icon="@drawable/home"/>
+
+        <item android:id="@+id/pedidos"
+            android:title="Pedidos"
+            android:icon="@drawable/pedidos"/>
+
+        <item android:id="@+id/logout"
+            android:title="Desconectarse"
+            android:icon="@drawable/logout"/>
+</menu>
