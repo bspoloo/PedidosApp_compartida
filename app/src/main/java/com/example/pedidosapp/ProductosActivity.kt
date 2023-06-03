@@ -8,11 +8,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.pedidosapp.databinding.ActivityAdminBinding
-import com.example.pedidosapp.databinding.ActivityMainBinding
 import com.example.pedidosapp.databinding.ActivityProductosBinding
-import com.google.android.material.navigation.NavigationView
-import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.ArrayList
 

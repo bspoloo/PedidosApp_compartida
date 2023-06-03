@@ -56,7 +56,7 @@ class AdminActivity : AppCompatActivity() {
 
             val user = FirebaseAuth.getInstance().currentUser       //para obtener el usuario actual
             val correoElectronico = user?.email                     //para obtener el email
-            Toast.makeText(this, "aqui se ve el email xd $correoElectronico", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "aqui se ve el email $correoElectronico", Toast.LENGTH_LONG).show()
 
 
         }

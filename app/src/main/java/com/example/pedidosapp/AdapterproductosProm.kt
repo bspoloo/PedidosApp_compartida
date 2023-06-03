@@ -70,7 +70,6 @@ class AdapterproductosProm(private var items: MutableList<ItemProduct>):
 
        // val botnPE: Button = view.findViewById(R.id.botonEliminame)
 
-
     }
 
 }

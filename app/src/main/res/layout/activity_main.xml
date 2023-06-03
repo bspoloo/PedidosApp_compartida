@@ -10,17 +10,10 @@
     tools:context=".MainActivity"
     android:id="@+id/drawerLayout">
 
-
-
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFFF">
-
-
-
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/FragmentContainerView"
             android:layout_width="0dp"
@@ -39,19 +32,12 @@
             android:id="@+id/bottomNavigationView"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:background="#3C1D1D"
+            android:background="#24DFD9"
             app:menu="@menu/bottom_menu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
-
-
-
-
-
-
-
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -59,45 +45,22 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Soy un recycler!" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerss"
-                android:layout_width="match_parent"
-                android:layout_height="700dp" />
-
-
         </LinearLayout>
 
         <FrameLayout
-            android:id="@+id/frameLayout"
+            android:id="@+id/nav_frameLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout"
-            tools:layout_editor_absoluteX="0dp"></FrameLayout>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout"></FrameLayout>
 
 
 
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_menu" />
-
-
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

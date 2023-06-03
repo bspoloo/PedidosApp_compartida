@@ -5,24 +5,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".HomeFragment"
-    android:background="#FFFFFF">
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-136dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="356dp"
-        android:text="Inicio"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="42dp"
-        android:textStyle="italic"
+    <ImageButton
+        android:id="@+id/buttonBebidas"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/boton_bebidas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.943" />
+        app:layout_constraintVertical_bias="0.027" />
+    <ImageButton
+        android:id="@+id/buttonLicores"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/boton_licores"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.823"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027" />
+    <ImageButton
+        android:id="@+id/buttonPanaderia"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/botones_panaderia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285" />
+
+    <ImageButton
+        android:id="@+id/buttonSnack"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/boton_snack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.823"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285" />
+    <ImageButton
+        android:id="@+id/buttonLacteos"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/boton_lacteos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
+    <ImageButton
+        android:id="@+id/buttonEnlatados"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/boton_enlatados"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.823"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
+
+    <ImageButton
+        android:id="@+id/buttonCarnes"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/boton_carnes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.802" />
+
+    <ImageButton
+        android:id="@+id/buttonCongelados"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/boton_congelados"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.823"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.802" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
