@@ -27,7 +27,6 @@ class LicoresFragment : Fragment() {
             val fragment = HomeFragment()
             val transaction = fragmentManager?.beginTransaction()
             transaction?.replace(R.id.nav_frameLayout, fragment)?.commit()
-
         }
         //boton para volver atras.
 

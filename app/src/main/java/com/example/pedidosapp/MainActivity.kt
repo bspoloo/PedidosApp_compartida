@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         //var adminfragment = AdminActivity()
         var homefragment = HomeFragment()
         var pedidosfragment = PedidosFragment()
+        var perfilfragment = perfilFragment()
 
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
 
@@ -57,9 +58,11 @@ class MainActivity : AppCompatActivity() {
                             true
                         }
                         R.id.logout -> {
-                            //setCurrentFragment(pedidosfragment)
-                            logout()
+                            setCurrentFragment(perfilfragment)
+                            //logout()
+
                             true
+
                         }
                         else -> false
 

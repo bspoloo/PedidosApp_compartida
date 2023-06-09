@@ -58,7 +58,6 @@ class AdminActivity : AppCompatActivity() {
             val correoElectronico = user?.email                     //para obtener el email
             Toast.makeText(this, "aqui se ve el email $correoElectronico", Toast.LENGTH_LONG).show()
 
-
         }
     }
 
