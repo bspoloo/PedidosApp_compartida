@@ -6,23 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".logoutFragment"
-    android:background="#289595">
+    android:background="#E5FCFB">
 
-    <TextView
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="356dp"
-        android:text="Bienvenido a PedidosApp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="42dp"
-        android:textStyle="italic"
+        android:src="@drawable/fondo_iniciar_app"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.943" />
-
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

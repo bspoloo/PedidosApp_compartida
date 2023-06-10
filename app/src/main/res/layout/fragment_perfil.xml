@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".perfilFragment">
+    tools:context=".perfilFragment"
+    android:background="#E5FCFB">
 
 
     <ImageView
@@ -67,14 +68,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:drawableLeft="@drawable/baseline_shopping_basket_24"
-        android:drawablePadding="16dp"
-        android:focusable="true"
-        android:gravity="center_vertical"
-        android:includeFontPadding="false"
-        android:padding="16dp"
+        android:background="@drawable/bnt_sesion_google"
+        android:drawableStart="@drawable/pedidos_claro"
+        android:drawablePadding="-30dp"
+        android:paddingLeft="25dp"
         android:text="Pedidos"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,9 +83,14 @@
 
     <Button
         android:id="@+id/buttonsesion"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Cerrar Sesión"
+        android:background="@drawable/bnt_sesion_sin_google"
+        android:drawableStart="@drawable/baseline_logout_24"
+        android:drawablePadding="-30dp"
+        android:paddingLeft="25dp"
+        android:text="Cerrar sesion"
+        android:textColor="#05aca3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

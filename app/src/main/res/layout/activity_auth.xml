@@ -6,43 +6,77 @@
     android:layout_height="match_parent"
     tools:context=".AuthActivity"
     android:orientation="vertical"
-    android:background="#EC0C5B">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="413dp"
-        android:layout_height="412dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.213"
-        app:srcCompat="@drawable/logoinicio" />
+    android:background="#E5FCFB">
 
     <Button
         android:id="@+id/loggingoogle"
-        android:layout_width="219dp"
-        android:layout_height="72dp"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:background="@drawable/bnt_sesion_google"
+        android:drawableStart="@drawable/baseline_email_24"
+        android:drawablePadding="-30dp"
+        android:paddingLeft="25dp"
         android:text="Inicia sesion con Google"
-        app:icon="@drawable/baseline_email_24"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.946"
-        app:rippleColor="#CC1F1F" />
+        app:layout_constraintVertical_bias="0.85" />
 
     <Button
         android:id="@+id/logginadmin"
-        android:layout_width="207dp"
-        android:layout_height="72dp"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:background="@drawable/bnt_sesion_sin_google"
+        android:drawableStart="@drawable/baseline_person_pin_24"
+        android:drawablePadding="-30dp"
+        android:paddingLeft="25dp"
         android:text="Ingresar sin cuenta"
-        app:icon="@drawable/baseline_person_pin_24"
+        android:textColor="#05aca3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975" />
+
+    <ImageView
+        android:layout_width="289dp"
+        android:layout_height="422dp"
+        android:src="@drawable/fondo_auth"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.801" />
+        app:layout_constraintVertical_bias="0.0" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido a PedidosApp"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
+
+    <TextView
+        android:layout_width="297dp"
+        android:layout_height="125dp"
+        android:text="En esta aplicacion podras escoger productos a tu gusto y ordenarlos, y tenerlos en la puerta de tu casa en menos de media hora"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.696" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

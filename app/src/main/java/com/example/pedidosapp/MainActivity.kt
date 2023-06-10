@@ -15,6 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 import com.example.pedidosapp.databinding.ActivityAuthBinding
 import com.example.pedidosapp.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -38,6 +39,11 @@ class MainActivity : AppCompatActivity() {
 
         //Navegacion Inferior
         //var adminfragment = AdminActivity()
+
+
+
+
+
         var homefragment = HomeFragment()
         var pedidosfragment = PedidosFragment()
         var perfilfragment = perfilFragment()
@@ -60,7 +66,6 @@ class MainActivity : AppCompatActivity() {
                         R.id.logout -> {
                             setCurrentFragment(perfilfragment)
                             //logout()
-
                             true
 
                         }
