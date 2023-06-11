@@ -15,6 +15,7 @@
         android:drawablePadding="-30dp"
         android:paddingLeft="25dp"
         android:hint="Ingrese la contraseña"
+        android:inputType="textPassword"
         android:textColorHint="#05aca3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,13 +25,14 @@
         app:layout_constraintVertical_bias="0.761" />
 
     <EditText
-        android:id="@+id/DatoAdminNombre"
+        android:id="@+id/DatoAdminCorreo"
         android:layout_width="280dp"
         android:layout_height="40dp"
         android:background="@drawable/fondo_edittex1"
         android:drawablePadding="-30dp"
         android:paddingLeft="25dp"
-        android:hint="Ingrese el Nombre"
+        android:hint="Ingrese su correo"
+        android:inputType="textEmailAddress"
         android:textColorHint="#05aca3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
