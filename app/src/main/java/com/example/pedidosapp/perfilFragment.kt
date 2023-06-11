@@ -35,7 +35,6 @@ class perfilFragment : Fragment() {
     ): View?
         {
             _binding = FragmentPerfilBinding.inflate(inflater, container, false)
-
             binding.buttonsesion.setOnClickListener{
 
                 val activity = it.context
@@ -59,9 +58,13 @@ class perfilFragment : Fragment() {
             binding.PerfilNombre.text=correoElectronico
             binding.EmailPerfil.text=correoElectronico
             var pedidosfragment = PedidosFragment()
-
             binding.CuentaPedidos.setOnClickListener {
 
+            }
+            binding.IniciarAdmin.setOnClickListener {
+
+                val i = Intent(context, ModeAdminActivity::class.java)
+                startActivity(i)
             }
 
             return binding.root

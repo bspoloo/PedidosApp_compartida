@@ -47,14 +47,13 @@ class MainActivity : AppCompatActivity() {
         var homefragment = HomeFragment()
         var pedidosfragment = PedidosFragment()
         var perfilfragment = perfilFragment()
+        var buscadorFragment = BuscadorFragment()
+
 
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
 
                     when(it.itemId){
-                        R.id.nav_admin -> {
-                            goToAdmin()
-                            true
-                        }
+
                         R.id.Hogar -> {
                             setCurrentFragment(homefragment)
                             true
@@ -63,6 +62,11 @@ class MainActivity : AppCompatActivity() {
                             setCurrentFragment(pedidosfragment)
                             true
                         }
+                        R.id.buscar -> {
+                            setCurrentFragment(buscadorFragment)
+                            true
+                        }
+
                         R.id.logout -> {
                             setCurrentFragment(perfilfragment)
                             //logout()
@@ -97,11 +101,6 @@ class MainActivity : AppCompatActivity() {
     }
     //Navegacion Inferior
 
-
-    private fun goToAdmin(){
-        val i = Intent(this, AdminActivity::class.java)
-        startActivity(i)
-    }
 
 
     // private fun verrecycler() {

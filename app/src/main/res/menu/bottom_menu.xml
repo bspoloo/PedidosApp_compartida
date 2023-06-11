@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <item android:id="@+id/nav_admin"
-            android:title=""
-            android:icon="@drawable/baseline_admin_panel_settings_24"/>
 
         <item android:id="@+id/Hogar"
             android:title=""
@@ -13,7 +10,11 @@
             android:title=""
             android:icon="@drawable/baseline_add_shopping_cart_24"/>
 
+        <item android:id="@+id/buscar"
+            android:title=""
+            android:icon="@drawable/baseline_search_24"/>
+
         <item android:id="@+id/logout"
             android:title=""
-            android:icon="@drawable/baseline_logout_24"/>
+            android:icon="@drawable/perfil_icon"/>
 </menu>

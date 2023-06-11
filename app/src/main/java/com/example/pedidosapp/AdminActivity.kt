@@ -1,5 +1,6 @@
 package com.example.pedidosapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,7 +17,6 @@ import com.example.pedidosapp.AuthActivity
 class AdminActivity : AppCompatActivity() {
 
     val db = FirebaseFirestore.getInstance()
-
 
     private lateinit var adapterproduct : Adapterproductos
     private lateinit var binding : ActivityAdminBinding
@@ -37,8 +37,8 @@ class AdminActivity : AppCompatActivity() {
 
         val guardarDatos = findViewById<Button>(R.id.buttonGuardar) as Button
         val borrarProducto = findViewById<Button>(R.id.buttonEliminar) as Button
-        val VerEmail = findViewById<Button>(R.id.buttonVerEmail) as Button
-
+        //val VerEmail = findViewById<Button>(R.id.buttonVerEmail) as Button
+        val VerTodosProductos = findViewById<Button>(R.id.buttonVerTodosProductos) as Button
 
 
         guardarDatos.setOnClickListener(){
@@ -47,60 +47,71 @@ class AdminActivity : AppCompatActivity() {
 
         borrarProducto.setOnClickListener(){
             eliminarProducto()
-            llamarrecyclerview()
+        }
+        VerTodosProductos.setOnClickListener {
+            val i = Intent(this, VerTodosProductosActivity::class.java)
+            startActivity(i)
         }
         //verrecycler()
-        llamarrecyclerview()
+        //llamarrecyclerview()
 
-        VerEmail.setOnClickListener {
-
-            val user = FirebaseAuth.getInstance().currentUser       //para obtener el usuario actual
-            val correoElectronico = user?.email                     //para obtener el email
-            Toast.makeText(this, "aqui se ve el email $correoElectronico", Toast.LENGTH_LONG).show()
-
-        }
+//        VerEmail.setOnClickListener {
+//
+//            val user = FirebaseAuth.getInstance().currentUser       //para obtener el usuario actual
+//            val correoElectronico = user?.email                     //para obtener el email
+//            Toast.makeText(this, "aqui se ve el email $correoElectronico", Toast.LENGTH_LONG).show()
+//
+//        }
     }
 
-    private fun llamarrecyclerview() {
-
-        producList = ArrayList()
-        adapterproduct = Adapterproductos(producList)
-        db.collection("Productos")
-            .orderBy("Nombre del producto")
-            .get()
-            .addOnSuccessListener { documets ->
-                for(document in documets){
-                    val wallItem = document.toObject(ItemProduct::class.java)
-                    wallItem.idProduct = document.id
-                    wallItem.nomProduct = document["Nombre del producto"].toString()
-                    wallItem.tipProduct = document["Tipo del producto"].toString()
-                    wallItem.preProduct = document["Precio del producto"].toString().toInt()
-                    wallItem.nitProduct = document["Codigo del producto"].toString()
-                    wallItem.imgProduct = document["Imagen del producto"].toString()
-
-                    binding.recyclerssProduct.adapter = adapterproduct
-                    binding.recyclerssProduct.layoutManager = LinearLayoutManager(this)
-                    producList.add(wallItem)
-                }
-            }
-
-    }
+//    private fun llamarrecyclerview() {
+//
+//        producList = ArrayList()
+//        adapterproduct = Adapterproductos(producList)
+//        db.collection("Productos")
+//            .orderBy("Nombre del producto")
+//            .get()
+//            .addOnSuccessListener { documets ->
+//                for(document in documets){
+//                    val wallItem = document.toObject(ItemProduct::class.java)
+//                    wallItem.idProduct = document.id
+//                    wallItem.nomProduct = document["Nombre del producto"].toString()
+//                    wallItem.tipProduct = document["Tipo del producto"].toString()
+//                    wallItem.preProduct = document["Precio del producto"].toString().toInt()
+//                    wallItem.nitProduct = document["Codigo del producto"].toString()
+//                    wallItem.imgProduct = document["Imagen del producto"].toString()
+//
+//                    binding.recyclerssProduct.adapter = adapterproduct
+//                    binding.recyclerssProduct.layoutManager = LinearLayoutManager(this)
+//                    producList.add(wallItem)
+//                }
+//            }
+//
+//    }
 
 
     private fun agregarDatos() {
 
-        if(binding.DatoTipo.text.toString().isBlank() or binding.DatoPrecio.text.toString().isBlank() or binding.DatoNitProducto.text.toString().isBlank()) {
+        if( binding.DatoProducto.text.toString().isBlank()
+            or binding.DatoDescripcion.text.toString().isBlank()
+            or binding.DatoTipo.text.toString().isBlank()
+            or binding.DatoMarca.text.toString().isBlank()
+            or binding.DatoUnidad.text.toString().isBlank()
+            or binding.DatoPrecio.text.toString().isBlank()
+            or binding.DatoUrlImagen.text.toString().isBlank()) {
             Toast.makeText(this, "Por favor rellene los campos", Toast.LENGTH_LONG).show()
         }
 
         else{
             val user = hashMapOf(
 
-                "Nombre del producto" to binding.DatoProducto.text.toString(),
-                "Tipo del producto" to binding.DatoTipo.text.toString(),
-                "Precio del producto" to binding.DatoPrecio.text.toString().toInt(),
-                "Codigo del producto" to binding.DatoNitProducto.text.toString(),
-                "Imagen del producto" to "https://waifus.wiki/wp-content/uploads/2021/07/Es2oz-LW4AEqdmd.jpg"
+                "Nombre" to binding.DatoProducto.text.toString(),
+                "Descripcion" to binding.DatoDescripcion.text.toString(),
+                "Tipo" to binding.DatoTipo.text.toString(),
+                "Marca" to binding.DatoMarca.text.toString(),
+                "Unidad" to binding.DatoUnidad.text.toString(),
+                "Precio" to binding.DatoPrecio.text.toString().toInt(),
+                "Imagen del producto" to binding.DatoUrlImagen.text.toString()
 
             )
             db.collection("Productos")
@@ -114,16 +125,21 @@ class AdminActivity : AppCompatActivity() {
                                                                     binding.DatoPrecio.text.toString().toInt(),
                                                                     binding.DatoNitProducto.text.toString(),
                                                                     "https://waifus.wiki/wp-content/uploads/2021/07/Es2oz-LW4AEqdmd.jpg"))*/
-                    llamarrecyclerview()
-                    adapterproduct.notifyDataSetChanged()
+                    //llamarrecyclerview()
+
+                    //adapterproduct.notifyDataSetChanged()
                 }
                 .addOnFailureListener {e-> Log.w("Tag","Error $e")}
 
 
             binding.DatoProducto.text.clear()
+            binding.DatoDescripcion.text.clear()
             binding.DatoTipo.text.clear()
+            binding.DatoMarca.text.clear()
+            binding.DatoUnidad.text.clear()
             binding.DatoPrecio.text.clear()
-            binding.DatoNitProducto.text.clear()
+            binding.DatoUrlImagen.text.clear()
+
 
         }
     }
@@ -144,8 +160,8 @@ class AdminActivity : AppCompatActivity() {
                 Toast.makeText(this, "Se elimino correctamente $datoBuscar", Toast.LENGTH_LONG).show()
                 binding.DatoBuscarProducto.text.clear()
 
-               llamarrecyclerview()
-                adapterproduct.notifyDataSetChanged()
+               //llamarrecyclerview()
+                //adapterproduct.notifyDataSetChanged()
 
         }
     }

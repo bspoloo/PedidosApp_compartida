@@ -20,6 +20,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:id="@+id/fotoProducto"/>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -60,23 +61,14 @@
                 android:layout_height="wrap_content"
                 android:hint="Precio del Producto"
                 android:id="@+id/precioProducto"/>
-
             <Button
 
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="presioname"
+                android:text="Hacer pedido"
                 android:textColor="@color/white"
-                android:id="@+id/botonPrecioname"
+                android:id="@+id/botonPedido"
                 android:background="@drawable/bnt_sesion_google"/>
-            <Button
-
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Eliminame"
-                android:textColor="#05aca3"
-                android:id="@+id/botonEliminame"
-                android:background="@drawable/bnt_sesion_sin_google"/>
 
         </LinearLayout>
     </LinearLayout>

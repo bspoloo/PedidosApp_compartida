@@ -16,7 +16,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PedidosApp"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ModeAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VerTodosProductosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EnlatadosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LicoresActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SnacksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CongeladosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CarnesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LacteosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PanaderiaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BebidasActivity"
+            android:exported="false" />
         <activity
             android:name=".AdminActivity"
             android:exported="false" />

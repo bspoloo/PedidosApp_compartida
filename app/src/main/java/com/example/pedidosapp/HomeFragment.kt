@@ -1,5 +1,6 @@
 package com.example.pedidosapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils.replace
 import androidx.fragment.app.Fragment
@@ -24,54 +25,46 @@ class HomeFragment : Fragment()
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         binding.buttonBebidas.setOnClickListener{
-            val fragment = BebidasFragment()
-            val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.nav_frameLayout, fragment)?.commit()
+
+            val i = Intent(context, BebidasActivity::class.java)
+            startActivity(i)
+
         }
         binding.buttonLicores.setOnClickListener{
 
-            val fragment = LicoresFragment()
-            val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.nav_frameLayout, fragment)?.commit()
+            val i = Intent(context, LicoresActivity::class.java)
+            startActivity(i)
         }
         binding.buttonPanaderia.setOnClickListener{
 
-            val fragment = PanaderiaFragment()
-            val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.nav_frameLayout, fragment)?.commit()
+            val i = Intent(context, PanaderiaActivity::class.java)
+            startActivity(i)
         }
         binding.buttonSnack.setOnClickListener{
 
-            val fragment = SnacksFragment()
-            val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.nav_frameLayout, fragment)?.commit()
+            val i = Intent(context, SnacksActivity::class.java)
+            startActivity(i)
         }
         binding.buttonLacteos.setOnClickListener{
 
-            val fragment = LacteosFragment()
-            val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.nav_frameLayout, fragment)?.commit()
+            val i = Intent(context, LacteosActivity::class.java)
+            startActivity(i)
         }
         binding.buttonEnlatados.setOnClickListener{
 
-            val fragment = EnlatadosFragment()
-            val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.nav_frameLayout, fragment)?.commit()
+            val i = Intent(context, EnlatadosActivity::class.java)
+            startActivity(i)
         }
         binding.buttonCarnes.setOnClickListener{
 
-            val fragment = CarnesFragment()
-            val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.nav_frameLayout, fragment)?.commit()
+            val i = Intent(context, CarnesActivity::class.java)
+            startActivity(i)
         }
         binding.buttonCongelados.setOnClickListener{
 
-            val fragment = CongeladosFragment()
-            val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.nav_frameLayout, fragment)?.commit()
+            val i = Intent(context, CongeladosActivity::class.java)
+            startActivity(i)
         }
-
-
 
         return binding.root
     }

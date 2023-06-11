@@ -30,10 +30,11 @@ class Adapterproductos(private var items: MutableList<ItemProduct>):
         val item = items[position]
 
         holder.nomP.text = item.nomProduct
+        holder.desP.text = item.descProduct
         holder.tipP.text = item.tipProduct
+        holder.marcP.text = item.marcProduct
+        holder.uniP.text = item.uniProduct
         holder.preP.text = item.preProduct.toString()
-        holder.nitP.text = item.nitProduct
-
 
         Glide.with(holder.itemView.context).load(item.imgProduct).circleCrop().into(holder.fotP)
         holder.botnPP.setOnClickListener{
@@ -81,9 +82,12 @@ class Adapterproductos(private var items: MutableList<ItemProduct>):
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val nomP: TextView = view.findViewById(R.id.nombreProducto)
+        val desP: TextView = view.findViewById(R.id.descripcionProducto)
         val tipP: TextView = view.findViewById(R.id.tipoProducto)
+        val marcP: TextView = view.findViewById(R.id.marcaProducto)
+        val uniP: TextView = view.findViewById(R.id.unidadProducto)
         val preP: TextView = view.findViewById(R.id.precioProducto)
-        val nitP: TextView = view.findViewById(R.id.codigoProducto)
+
         val fotP: ImageView = view.findViewById(R.id.fotoProducto)
         val botnPP: Button = view.findViewById(R.id.botonPrecioname)
         val botnPE: Button = view.findViewById(R.id.botonEliminame)

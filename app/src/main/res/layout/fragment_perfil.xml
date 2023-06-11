@@ -67,8 +67,9 @@
         android:id="@+id/Cuenta_pedidos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:clickable="true"
+        android:layout_marginTop="192dp"
         android:background="@drawable/bnt_sesion_google"
+        android:clickable="true"
         android:drawableStart="@drawable/pedidos_claro"
         android:drawablePadding="-30dp"
         android:paddingLeft="25dp"
@@ -77,9 +78,28 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Email_perfil" />
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/Iniciar_Admin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="256dp"
+        android:background="@drawable/bnt_sesion_google"
+        android:clickable="true"
+        android:drawableStart="@drawable/baseline_admin_panel_settings_24"
+        android:drawablePadding="-30dp"
+        android:paddingLeft="25dp"
+        android:text="Iniciar el modo Administrador"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonsesion"

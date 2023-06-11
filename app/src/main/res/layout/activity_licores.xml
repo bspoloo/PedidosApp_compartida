@@ -4,21 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BebidasFragment"
-    android:background="@drawable/fondo_bebidas">
+    tools:context=".LicoresActivity"
+    android:background="@drawable/fondo_licores_tabaco">
 
-
-    <ImageButton
-        android:id="@+id/buttonBack"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_back"
+    <LinearLayout
+        android:layout_width="376dp"
+        android:layout_height="570dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.005" />
+        app:layout_constraintVertical_bias="0.884">
 
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerssTipoProduct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
