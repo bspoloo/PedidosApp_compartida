@@ -20,7 +20,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:id="@+id/fotoProducto"/>
-
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -30,9 +29,23 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Nombre del Producto:"
+                android:textStyle="bold"
+                android:textColor="#05aca3"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="Nombre del Producto"
                 android:id="@+id/nombreProducto"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descripción del Producto:"
+                android:textStyle="bold"
+                android:textColor="#05aca3"
+                android:textSize="15dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -42,13 +55,36 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Tipo del Producto:"
+                android:textStyle="bold"
+                android:textColor="#05aca3"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="Tipo del Producto"
                 android:id="@+id/tipoProducto"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Marca del Producto:"
+                android:textStyle="bold"
+                android:textColor="#05aca3"
+                android:textSize="15dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Marca del Producto"
                 android:id="@+id/marcaProducto"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Unidad del Producto:"
+                android:textStyle="bold"
+                android:textColor="#05aca3"
+                android:textSize="15dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -56,7 +92,13 @@
                 android:id="@+id/unidadProducto"/>
 
             <TextView
-
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Precio del Producto en BS:"
+                android:textStyle="bold"
+                android:textColor="#05aca3"
+                android:textSize="15dp"/>
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Precio del Producto"

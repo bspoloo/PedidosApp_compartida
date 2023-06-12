@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -52,6 +53,39 @@ class AdminActivity : AppCompatActivity() {
             val i = Intent(this, VerTodosProductosActivity::class.java)
             startActivity(i)
         }
+
+
+
+        //para el boton insertar nuevo producto
+        binding.buttonInsertaProducto.setOnClickListener {
+
+            binding.cardViewInsertarP.visibility = View.VISIBLE
+            binding.buttonInsertaProducto.visibility = View.GONE
+        }
+        binding.buttonCerrarInertP.setOnClickListener {
+
+            binding.cardViewInsertarP.visibility = View.GONE
+            binding.buttonInsertaProducto.visibility = View.VISIBLE
+        }
+        //para el boton insertar nuevo producto
+
+        //para el boton Eliminar producto por su codigo
+        binding.buttonEliminarProductoCode.setOnClickListener {
+
+            binding.cardViewElimCP.visibility = View.VISIBLE
+            //binding.buttonEliminarProductoCode.visibility = View.GONE
+        }
+        binding.buttonCerrarElimP.setOnClickListener {
+
+            binding.cardViewElimCP.visibility = View.GONE
+            //binding.buttonEliminarProductoCode.visibility = View.VISIBLE
+        }
+        //para el boton Eliminar producto por su codigo
+
+
+
+
+
         //verrecycler()
         //llamarrecyclerview()
 

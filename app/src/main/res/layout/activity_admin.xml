@@ -9,272 +9,346 @@
     tools:layout_editor_absoluteX="39dp"
     tools:layout_editor_absoluteY="0dp">
 
+    <ImageView
+        android:layout_width="289dp"
+        android:layout_height="422dp"
+        android:src="@drawable/fondo_admin_pro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/fondo_item_producto2"
-        android:text="Inserta un nuevo Producto"
-        android:textAlignment="center"
-        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modo Administrador"
         android:textSize="26dp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.543" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/fondo_item_producto2"
-        android:text="Elimina un Producto usando su codigo"
+        android:layout_width="293dp"
+        android:layout_height="108dp"
+        android:text="En esta seccion podras administrar todos los productos del supermercado"
         android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="22dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.819" />
+        app:layout_constraintVertical_bias="0.663" />
 
-    <EditText
-        android:id="@+id/DatoBuscarProducto"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:hint="Codigo del Producto"
-        android:text=""
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
 
     <Button
-        android:id="@+id/buttonEliminar"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/fondo_item_producto"
-        android:text="Borrar Producto"
-        android:textColor="#05aca3"
+        android:id="@+id/buttonEliminarProductoCode"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:background="@drawable/fondo_item_producto2"
+        android:text="Eliminar un Producto con su codigo"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
-
-    <EditText
-        android:id="@+id/DatoProducto"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.872"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.106" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Producto"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.103" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tipo"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.275" />
-
-    <EditText
-        android:id="@+id/DatoUrlImagen"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.872"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="URL de imagen"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Descripcion"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
-
-    <EditText
-        android:id="@+id/DatoTipo"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.872"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282" />
-
-    <EditText
-        android:id="@+id/DatoMarca"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.872"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.373" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Marca"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.363" />
-
-    <EditText
-        android:id="@+id/DatoUnidad"
-        android:hint="Kilogramos, Litros, etc"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.872"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Unidad"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.451" />
-
-    <EditText
-        android:id="@+id/DatoDescripcion"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.872"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.195" />
-
-
-    <EditText
-        android:id="@+id/DatoPrecio"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:hint="Precio en BS"
-        android:inputType="numberDecimal"
-        android:text=""
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.872"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.562" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Precio"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.549" />
+        app:layout_constraintVertical_bias="0.813" />
 
     <Button
-        android:id="@+id/buttonGuardar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/fondo_item_producto"
-        android:text="Guardar datos"
-        android:textColor="#05aca3"
+        android:id="@+id/buttonInsertaProducto"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:background="@drawable/fondo_item_producto2"
+        android:text="Insertar un Producto"
+        android:textColor="@color/white"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742" />
+        app:layout_constraintVertical_bias="0.729" />
 
     <Button
         android:id="@+id/buttonVerTodosProductos"
-        android:layout_width="218dp"
+        android:layout_width="300dp"
         android:layout_height="45dp"
         android:background="@drawable/fondo_item_producto2"
         android:text="Ver todos los productos"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.989" />
+        app:layout_constraintVertical_bias="0.897" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewInsertarP"
+        android:layout_width="400dp"
+        android:layout_height="600dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496"
+        android:background="@drawable/bnt_sesion_sin_google"
+        android:visibility="gone">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/buttonCerrarInertP"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/button_cerrar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.935"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.012" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/fondo_item_producto2"
+                android:text="Inserta un nuevo Producto"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.08" />
+
+            <EditText
+                android:id="@+id/DatoProducto"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:background="@drawable/fondo_edittex1"
+                android:drawablePadding="-30dp"
+                android:hint="Nombre del producto"
+                android:paddingLeft="25dp"
+                android:textColorHint="#05aca3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.52"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.175" />
+            <EditText
+                android:id="@+id/DatoDescripcion"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:background="@drawable/fondo_edittex1"
+                android:drawablePadding="-30dp"
+                android:hint="Descripcion del producto"
+                android:paddingLeft="25dp"
+                android:textColor="@color/black"
+                android:textColorHint="#05aca3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.373" />
+
+            <EditText
+                android:id="@+id/DatoTipo"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:background="@drawable/fondo_edittex1"
+                android:drawablePadding="-30dp"
+                android:hint="Tipo del producto"
+                android:paddingLeft="25dp"
+                android:textColor="@color/black"
+                android:textColorHint="#05aca3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.273" />
+
+            <EditText
+                android:id="@+id/DatoMarca"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:background="@drawable/fondo_edittex1"
+                android:drawablePadding="-30dp"
+                android:hint="Marca del producto"
+                android:paddingLeft="25dp"
+                android:textColor="@color/black"
+                android:textColorHint="#05aca3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.471" />
+
+            <EditText
+                android:id="@+id/DatoUnidad"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:background="@drawable/fondo_edittex1"
+                android:drawablePadding="-30dp"
+                android:hint="Unidad del producto"
+                android:paddingLeft="25dp"
+                android:textColor="@color/black"
+                android:textColorHint="#05aca3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.567" />
+
+            <EditText
+                android:id="@+id/DatoPrecio"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:background="@drawable/fondo_edittex1"
+                android:drawablePadding="-30dp"
+                android:hint="Precio del producto en BS"
+                android:inputType="numberDecimal"
+                android:paddingLeft="25dp"
+                android:textColor="@color/black"
+                android:textColorHint="#05aca3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.671" />
+
+            <EditText
+                android:id="@+id/DatoUrlImagen"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:background="@drawable/fondo_edittex1"
+                android:drawablePadding="-30dp"
+                android:hint="URL de imagen del producto"
+                android:paddingLeft="25dp"
+                android:textColor="@color/black"
+                android:textColorHint="#05aca3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.766" />
+
+
+
+            <Button
+                android:id="@+id/buttonGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fondo_item_producto"
+                android:text="Guardar datos"
+                android:textColor="#05aca3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.914"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewElimCP"
+        android:layout_width="400dp"
+        android:layout_height="230dp"
+        android:background="@drawable/bnt_sesion_sin_google"
+        android:visibility="gone"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/buttonCerrarElimP"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/button_cerrar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.935"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.012" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/fondo_item_producto2"
+                android:text="Elimina un Producto usando su codigo"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.205" />
+
+            <EditText
+                android:id="@+id/DatoBuscarProducto"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:background="@drawable/fondo_edittex1"
+                android:drawablePadding="-30dp"
+                android:hint="Inserte codigo del producto"
+                android:paddingLeft="25dp"
+                android:textColor="@color/black"
+                android:textColorHint="#05aca3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.52"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/buttonEliminar"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fondo_item_producto"
+                android:text="Borrar Producto"
+                android:textColor="#05aca3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.894" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
