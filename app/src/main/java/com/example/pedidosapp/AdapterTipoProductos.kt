@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
@@ -39,10 +41,15 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
         Glide.with(holder.itemView.context).load(item.imgProduct).circleCrop().into(holder.fotP)
 
         holder.botnPP.setOnClickListener{
-            val activity = it.context //as AppCompatActivity
-            Toast.makeText(activity,"ollo, soy ${item.nomProduct} ${item.tipProduct}", Toast.LENGTH_LONG).show()
-            println("ollo, soy ${item.nomProduct} ${item.tipProduct}")
+//            val activity = it.context //as AppCompatActivity
+//            Toast.makeText(activity,"ollo, soy ${item.nomProduct} ${item.tipProduct}", Toast.LENGTH_LONG).show()
+//            println("ollo, soy ${item.nomProduct} ${item.tipProduct}")
 
+            holder.carViewP.visibility = View.VISIBLE
+        }
+        holder.cerrarP.setOnClickListener{
+
+            holder.carViewP.visibility = View.GONE
         }
 
     }
@@ -62,6 +69,9 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
         val fotP: ImageView = view.findViewById(R.id.fotoProducto)
         val botnPP: Button = view.findViewById(R.id.botonPedido)
 
+
+        val carViewP : CardView = view.findViewById(R.id.cardViewHacerPedido)
+        val cerrarP : ImageButton = view.findViewById(R.id.buttonCerrarP)
     }
 
 }
