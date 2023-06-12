@@ -165,6 +165,7 @@
             <EditText
                 android:id="@+id/DatoNombrePedido"
                 android:layout_width="340dp"
+                android:text="Hola"
                 android:layout_height="40dp"
                 android:background="@drawable/fondo_edittex1"
                 android:drawablePadding="-30dp"
@@ -177,7 +178,8 @@
                 app:layout_constraintHorizontal_bias="0.258"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.145" />
+                app:layout_constraintVertical_bias="0.145"
+                android:enabled="false"/>
 
             <EditText
                 android:id="@+id/DatoDescripcionPedido"
@@ -194,7 +196,8 @@
                 app:layout_constraintHorizontal_bias="0.241"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.217" />
+                app:layout_constraintVertical_bias="0.217"
+                android:enabled="false"/>
 
             <EditText
                 android:id="@+id/DatoMarcaPedido"
@@ -211,7 +214,8 @@
                 app:layout_constraintHorizontal_bias="0.258"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.363" />
+                app:layout_constraintVertical_bias="0.363"
+                android:enabled="false"/>
 
             <EditText
                 android:id="@+id/DatoUnidadPedido"
@@ -228,7 +232,8 @@
                 app:layout_constraintHorizontal_bias="0.241"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.442" />
+                app:layout_constraintVertical_bias="0.442"
+                android:enabled="false"/>
 
             <EditText
                 android:id="@+id/DatoPrecioPedido"
@@ -246,7 +251,8 @@
                 app:layout_constraintHorizontal_bias="0.241"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.516" />
+                app:layout_constraintVertical_bias="0.516"
+                android:enabled="false"/>
 
             <EditText
                 android:id="@+id/DatoUbicacionPedido"
@@ -315,9 +321,11 @@
                 app:layout_constraintHorizontal_bias="0.241"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.292" />
+                app:layout_constraintVertical_bias="0.292"
+                android:enabled="false"/>
 
             <TextView
+                android:id="@+id/textCotizar"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:background="@drawable/fondo_item_producto2"
