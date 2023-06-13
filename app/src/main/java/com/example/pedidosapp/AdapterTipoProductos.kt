@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.math.BigDecimal
 
@@ -154,6 +155,8 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
         holder.buttonPagar.setOnClickListener {
 
             val activity = it.context
+            val user = FirebaseAuth.getInstance().currentUser       //para obtener el usuario actual
+            val correoElectronico = user?.email                     //para obtener el email
 
             if(holder.cantPed.text.toString().isBlank()){
                 Toast.makeText(activity,"Por favor introduzaca una cantidad", Toast.LENGTH_LONG).show()
@@ -189,6 +192,9 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
                     "Precio" to holder.preDaP.text.toString().toFloat(),
                     "Cantidad" to holder.cantPed.text.toString().toInt(),
                     "Total a pagar" to holder.cantPed.text.toString(),
+                    "Total a pagar" to holder.cantPed.text.toString(),
+                    "Email del destinatario" to correoElectronico,
+
 
                 )
                 db.collection("Pedidos")
