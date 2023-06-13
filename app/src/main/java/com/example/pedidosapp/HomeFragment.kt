@@ -64,6 +64,11 @@ class HomeFragment : Fragment()
 
             val i = Intent(context, CongeladosActivity::class.java)
             startActivity(i)
+
+        }
+        binding.buttonLimpieza.setOnClickListener {
+            val i = Intent(context, LimpiezaActivity::class.java)
+            startActivity(i)
         }
 
         return binding.root
