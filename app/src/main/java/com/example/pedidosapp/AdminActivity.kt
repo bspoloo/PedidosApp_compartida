@@ -18,16 +18,7 @@ import com.example.pedidosapp.AuthActivity
 class AdminActivity : AppCompatActivity() {
 
     val db = FirebaseFirestore.getInstance()
-
-    private lateinit var adapterproduct : Adapterproductos
     private lateinit var binding : ActivityAdminBinding
-
-    private lateinit var producList : ArrayList<ItemProduct>
-
-    private lateinit var mAuth : FirebaseAuth
-
-    //lateinit var mAuth: FirebaseAuth
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +29,7 @@ class AdminActivity : AppCompatActivity() {
 
         val guardarDatos = findViewById<Button>(R.id.buttonGuardar) as Button
         val borrarProducto = findViewById<Button>(R.id.buttonEliminar) as Button
+
         //val VerEmail = findViewById<Button>(R.id.buttonVerEmail) as Button
         val VerTodosProductos = findViewById<Button>(R.id.buttonVerTodosProductos) as Button
 

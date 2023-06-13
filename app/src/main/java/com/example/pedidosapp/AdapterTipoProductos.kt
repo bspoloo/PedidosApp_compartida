@@ -3,6 +3,7 @@ package com.example.pedidosapp
 import android.content.DialogInterface
 import android.graphics.drawable.Drawable
 import android.text.Editable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +23,8 @@ import java.math.BigDecimal
 
 class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
     RecyclerView.Adapter<AdapterTipoProductos.ViewHolder>(){
+
+    val db = FirebaseFirestore.getInstance()
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -43,15 +46,20 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
         Glide.with(holder.itemView.context).load(item.imgProduct).circleCrop().into(holder.fotP)
 
+
         holder.botnPP.setOnClickListener{
 //            val activity = it.context //as AppCompatActivity
 //            Toast.makeText(activity,"ollo, soy ${item.nomProduct} ${item.tipProduct}", Toast.LENGTH_LONG).show()
 //            println("ollo, soy ${item.nomProduct} ${item.tipProduct}")
+            holder.carViewEscg.visibility = View.VISIBLE
+        }
+
+        //para los botones de Delivery y Recoger
+        holder.buttonDely.setOnClickListener {
 
             holder.carViewP.visibility = View.VISIBLE
-
-
-            //para cargar esos valores al carview del pedido
+            holder.carViewEscg.visibility = View.GONE
+            //para cargar esos valores al carview del Delivery
             var nomPedido:String = item.nomProduct
             holder.nomDaP.setText(nomPedido)
 
@@ -69,16 +77,48 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
             var prePedido:Float = item.preProduct
             holder.preDaP.setText(prePedido.toString())
-            //para cargar esos valores al carview del pedido
 
+            //para cargar esos valores al carview del Delivery
         }
-        holder.cerrarP.setOnClickListener{
 
-            holder.carViewP.visibility = View.GONE
+
+
+        holder.buttonRecog.setOnClickListener {
+
+            holder.carViewP.visibility = View.VISIBLE
+            holder.carViewEscg.visibility = View.GONE
+
+            //para cargar esos valores al carview del Delivery
+            var nomPedido: String = item.nomProduct
+            holder.nomDaP.setText(nomPedido)
+
+            var descPedido: String = item.descProduct
+            holder.descDaP.setText(descPedido)
+
+            var tipPedido: String = item.tipProduct
+            holder.tipDaP.setText(tipPedido)
+
+            var marcPedido: String = item.marcProduct
+            holder.marcDaP.setText(marcPedido)
+
+            var uniPedido: String = item.uniProduct
+            holder.uniDaP.setText(uniPedido)
+
+            var lugPedido:String = "En el supermercado"
+            holder.lugPed.setText(lugPedido)
+            holder.lugPed.setEnabled(false)
+
+            var prePedido: Float = item.preProduct
+            holder.preDaP.setText(prePedido.toString())
         }
+            //para cargar esos valores al carview del Delivery
+        //para los botones de Delivery y Recoger
+
+
 
         // para el boton de cotizar
         holder.botnCotiz.setOnClickListener {
+
 
             val activity = it.context
             if(holder.cantPed.text.toString().isBlank()){
@@ -86,15 +126,84 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
             }
             else{
 
+
                 val cantidadP = Integer.parseInt(holder.cantPed.text.toString())
                 val precioP = item.preProduct
                 val cotizar = cantidadP * precioP
 
-                holder.textCotiz.text = cotizar.toString() + " Bs"
+                var cotPedido: String = cotizar.toString() + " Bs"
+                holder.EditCoti.setText(cotPedido)
+
             }
 
         }
 
+
+        holder.cerrarEP.setOnClickListener {
+
+            holder.carViewEscg.visibility = View.GONE
+
+        }
+        holder.cerrarP.setOnClickListener {
+
+            holder.carViewP.visibility = View.GONE
+            holder.carViewEscg.visibility = View.GONE
+
+        }
+
+        holder.buttonPagar.setOnClickListener {
+
+            val activity = it.context
+
+            if(holder.cantPed.text.toString().isBlank()){
+                Toast.makeText(activity,"Por favor introduzaca una cantidad", Toast.LENGTH_LONG).show()
+            }
+            else{
+
+
+                val cantidadP = Integer.parseInt(holder.cantPed.text.toString())
+                val precioP = item.preProduct
+                val cotizar = cantidadP * precioP
+
+                var cotPedido: String = cotizar.toString() + " Bs"
+                holder.EditCoti.setText(cotPedido)
+
+            }
+
+            if( holder.DatoUbicacionPedido.text.toString().isBlank()
+                or holder.DatoDestinatarioPedido.text.toString().isBlank()
+                or holder.cantPed.text.toString().isBlank()) {
+                Toast.makeText(activity, "Por favor rellene los campos", Toast.LENGTH_LONG).show()
+            }
+
+            else{
+
+                val Pedido = hashMapOf(
+
+                    "Nombre del Producto" to holder.nomDaP.text.toString(),
+                    "Tipo del Prodducto" to holder.tipDaP.text.toString(),
+                    "Marca del Producto" to holder.marcDaP.text.toString(),
+                    "Unidad del Producto" to holder.uniDaP.text.toString(),
+                    "Ubicacion" to holder.DatoUbicacionPedido.text.toString(),
+                    "Nombre del destinatario" to holder.DatoDestinatarioPedido.text.toString(),
+                    "Precio" to holder.preDaP.text.toString().toFloat(),
+                    "Cantidad" to holder.cantPed.text.toString().toInt(),
+                    "Total a pagar" to holder.cantPed.text.toString(),
+
+                )
+                db.collection("Pedidos")
+                    .add(Pedido)
+                    .addOnSuccessListener {  documentReference ->
+                        Toast.makeText(activity, "Su pedido fue realizado exitosamente", Toast.LENGTH_LONG).show()
+                        println("agregado correctamente xd")
+
+                    }
+                    .addOnFailureListener {e-> Log.w("Tag","Error $e")}
+
+            }
+
+
+        }
 
 
         // para el boton de cotizar
@@ -118,11 +227,16 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
 
         val carViewP : CardView = view.findViewById(R.id.cardViewHacerPedido)
+        val carViewEscg : CardView = view.findViewById(R.id.cardViewEscogerPedido)
+        val buttonDely : Button = view.findViewById(R.id.buttonDelibery)
+        val buttonRecog : Button = view.findViewById(R.id.buttonRecoger)
         val cerrarP : ImageButton = view.findViewById(R.id.buttonCerrarP)
+        val cerrarEP : ImageButton = view.findViewById(R.id.buttonCerrarEP)
 
         val botnCotiz : Button = view.findViewById(R.id.buttonCotizar)
-        val textCotiz : TextView = view.findViewById(R.id.textCotizar)
         val cantPed : EditText = view.findViewById(R.id.DatoCantidadPedido)
+        val lugPed : EditText = view.findViewById(R.id.DatoUbicacionPedido)
+
 
         //para el cardview de pedidos
         val nomDaP : EditText = view.findViewById(R.id.DatoNombrePedido)
@@ -131,9 +245,17 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
         val marcDaP : EditText = view.findViewById(R.id.DatoMarcaPedido)
         val uniDaP : EditText = view.findViewById(R.id.DatoUnidadPedido)
         val preDaP : EditText = view.findViewById(R.id.DatoPrecioPedido)
+        val EditCoti : EditText = view.findViewById(R.id.EditCotizar)
+        val DatoUbicacionPedido : EditText = view.findViewById(R.id.DatoUbicacionPedido)
+        val DatoDestinatarioPedido : EditText = view.findViewById(R.id.DatoDestinatarioPedido)
+
+        val buttonPagar : Button = view.findViewById(R.id.buttonPagar)
 
 
     }
+
+
+
 
 }
 

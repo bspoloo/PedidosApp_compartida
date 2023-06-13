@@ -115,6 +115,7 @@
         </LinearLayout>
     </LinearLayout>
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewHacerPedido"
         android:layout_width="400dp"
@@ -165,7 +166,6 @@
             <EditText
                 android:id="@+id/DatoNombrePedido"
                 android:layout_width="340dp"
-                android:text="Hola"
                 android:layout_height="40dp"
                 android:background="@drawable/fondo_edittex1"
                 android:drawablePadding="-30dp"
@@ -324,14 +324,14 @@
                 app:layout_constraintVertical_bias="0.292"
                 android:enabled="false"/>
 
-            <TextView
-                android:id="@+id/textCotizar"
+            <EditText
+                android:id="@+id/EditCotizar"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
-                android:background="@drawable/fondo_item_producto2"
-                android:text=""
+                android:background="@drawable/fondo_item_producto"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="#05aca3"
+                android:enabled="false"
                 android:textSize="22dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -345,9 +345,9 @@
                 android:id="@+id/buttonCotizar"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/fondo_item_producto"
+                android:background="@drawable/bnt_sesion_google"
                 android:text="Cotizar"
-                android:textColor="#05aca3"
+                android:textColor="#ffff"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.784"
@@ -355,38 +355,105 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.845" />
 
+
             <Button
-                android:id="@+id/buttonTargeta"
+                android:id="@+id/buttonPagar"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/fondo_item_producto"
-                android:text="Trajeta"
+                android:text="Pagar"
                 android:textColor="#05aca3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.144"
+                app:layout_constraintHorizontal_bias="0.456"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.943" />
-
-            <Button
-                android:id="@+id/buttonPersona"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/fondo_item_producto"
-                android:text="En persona"
-                android:textColor="#05aca3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.784"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.944" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
 
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewEscogerPedido"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:background="@drawable/bnt_sesion_sin_google"
+        android:visibility="gone"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/buttonCerrarEP"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/button_cerrar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.905"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:layout_width="368dp"
+                android:layout_height="40dp"
+                android:background="@drawable/fondo_item_producto2"
+                android:text="Escoge el tipo de pedido"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.125"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.281" />
+
+            <Button
+                android:id="@+id/buttonRecoger"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fondo_item_producto"
+                android:text="Recoger"
+                android:textColor="#05aca3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.804"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.843" />
+
+            <Button
+                android:id="@+id/buttonDelibery"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fondo_item_producto"
+                android:text="Delivery"
+                android:textColor="#05aca3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.108"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.843" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.cardview.widget.CardView>
