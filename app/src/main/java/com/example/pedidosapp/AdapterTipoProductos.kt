@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.type.DateTime
 import java.math.BigDecimal
+import java.time.Instant
 
 class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
     RecyclerView.Adapter<AdapterTipoProductos.ViewHolder>(){
@@ -208,7 +209,7 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
 
                     "Numero de telefono" to holder.numPed.text.toString().toInt(),
-                    "Fecha del pedido" to holder.fechaped.toString(),
+                    "Fecha del pedido" to Instant.now().toString(),
 
                 )
                 db.collection("Pedidos")
@@ -258,7 +259,6 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
         val lugPed : EditText = view.findViewById(R.id.DatoUbicacionPedido)
 
         val numPed : EditText = view.findViewById(R.id.DatoNumero)
-        val fechaped: DateTime = DateTime.getDefaultInstance()
 
 
         //para el cardview de pedidos
