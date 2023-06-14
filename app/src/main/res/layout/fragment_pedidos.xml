@@ -1,29 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent"
-    tools:context=".PedidosFragment"
-    android:background="#E5FCFB">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="4dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="4dp"
+    app:cardCornerRadius="30dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:visibility="visible">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/fondo_item_producto">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/fotoProducto"/>
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Soy un recycler!" />
+            android:layout_weight="3"
+            android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerss"
-            android:layout_width="match_parent"
-            android:layout_height="700dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Id del pedido:"
+                android:textStyle="bold"
+                android:textColor="#05aca3"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre del Producto"
+                android:id="@+id/nombreProducto"/>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Marca del Producto:"
+                android:textStyle="bold"
+                android:textColor="#05aca3"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Marca del Producto"
+                android:id="@+id/marcaProducto"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Unidad del Producto:"
+                android:textStyle="bold"
+                android:textColor="#05aca3"
+                android:textSize="15dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Precio del total en BS:"
+                android:textStyle="bold"
+                android:textColor="#05aca3"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Precio del Producto"
+                android:id="@+id/precioProducto"/>
+
+            <Button
+                android:id="@+id/botonDetalles"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Detalles"
+                android:textColor="@color/white"
+                android:background="@drawable/bnt_sesion_google"/>
+
+
+        </LinearLayout>
     </LinearLayout>
 
-
-</FrameLayout>
+</androidx.cardview.widget.CardView>
