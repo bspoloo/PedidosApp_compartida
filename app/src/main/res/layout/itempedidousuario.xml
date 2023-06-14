@@ -35,6 +35,18 @@
                     android:layout_height="wrap_content"
                     android:hint="ID del Pedido"
                     android:id="@+id/idPedido"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre del producto:"
+                    android:textStyle="bold"
+                    android:textColor="#05aca3"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre del Pedido"
+                    android:id="@+id/nombreProductoPedido"/>
 
 
                 <TextView

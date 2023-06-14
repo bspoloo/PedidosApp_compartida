@@ -30,6 +30,7 @@ class AdapterPedidoUsuario(private var items: MutableList<ItemPedido>):
         val item = items[position]
 
         holder.idPedido.text = item.idPedido
+        holder.nombreProductoPedido.text = item.nomProPedido
         holder.fechaPedido.text = item.fechaPedido
         holder.pagoPedido.text = item.tipoPagoPedido
         holder.estadoEntrega.text = item.estadoEntregaPedido
@@ -47,6 +48,8 @@ class AdapterPedidoUsuario(private var items: MutableList<ItemPedido>):
         val fechaPedido: TextView = view.findViewById(R.id.fechaPedido)
         val pagoPedido: TextView = view.findViewById(R.id.pagoPedido)
         val estadoEntrega: TextView = view.findViewById(R.id.estadoEntrega)
+        val nombreProductoPedido: TextView = view.findViewById(R.id.nombreProductoPedido)
+
 
 
     }

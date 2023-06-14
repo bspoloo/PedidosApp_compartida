@@ -52,6 +52,7 @@ class PedidosFragment : Fragment() {
                 for(document in documets){
                     val wallItem = document.toObject(ItemPedido::class.java)
                     wallItem.idPedido = document.id
+                    wallItem.nomProPedido = document["Nombre del Producto"].toString()
                     wallItem.fechaPedido = document["Fecha del pedido"].toString()
                     wallItem.tipoPagoPedido = document["Tipo de pago"].toString()
                     wallItem.estadoEntregaPedido = document["Estado de la entrega"].toString()
