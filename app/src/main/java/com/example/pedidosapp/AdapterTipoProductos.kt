@@ -20,6 +20,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.type.DateTime
 import java.math.BigDecimal
 
 class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
@@ -84,6 +85,8 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
             holder.lugPed.setText(lugPedido)
             holder.lugPed.setEnabled(true)
 
+
+
             //para cargar esos valores al carview del Delivery
         }
 
@@ -116,7 +119,6 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
             var prePedido: Float = item.preProduct
             holder.preDaP.setText(prePedido.toString())
-
 
 
         }
@@ -199,6 +201,9 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
                     "Cantidad" to holder.cantPed.text.toString().toInt(),
                     "Total a pagar" to holder.cantPed.text.toString(),
 
+                    "Numero de telefono" to holder.numPed.text.toString().toInt(),
+                    "Fecha del pedido" to holder.fechaped.toString(),
+
                 )
                 db.collection("Pedidos")
                     .add(Pedido)
@@ -245,6 +250,9 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
         val botnCotiz : Button = view.findViewById(R.id.buttonCotizar)
         val cantPed : EditText = view.findViewById(R.id.DatoCantidadPedido)
         val lugPed : EditText = view.findViewById(R.id.DatoUbicacionPedido)
+
+        val numPed : EditText = view.findViewById(R.id.DatoNumero)
+        val fechaped: DateTime = DateTime.getDefaultInstance()
 
 
         //para el cardview de pedidos
