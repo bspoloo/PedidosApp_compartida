@@ -13,13 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:visibility="visible"
         android:background="@drawable/fondo_item_producto">
 
         <ImageView
+            android:id="@+id/fotoProducto"
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/fotoProducto"/>
+            android:layout_weight="1" />
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -33,11 +34,12 @@
                 android:textStyle="bold"
                 android:textColor="#05aca3"
                 android:textSize="15dp"/>
+
             <TextView
+                android:id="@+id/nombreProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre del Producto"
-                android:id="@+id/nombreProducto"/>
+                android:hint="Nombre del Producto" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -46,11 +48,12 @@
                 android:textStyle="bold"
                 android:textColor="#05aca3"
                 android:textSize="15dp"/>
+
             <TextView
+                android:id="@+id/descripcionProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Descripcion del Producto"
-                android:id="@+id/descripcionProducto"/>
+                android:hint="Descripcion del Producto" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -59,11 +62,12 @@
                 android:textStyle="bold"
                 android:textColor="#05aca3"
                 android:textSize="15dp"/>
+
             <TextView
+                android:id="@+id/tipoProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tipo del Producto"
-                android:id="@+id/tipoProducto"/>
+                android:hint="Tipo del Producto" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -72,11 +76,12 @@
                 android:textStyle="bold"
                 android:textColor="#05aca3"
                 android:textSize="15dp"/>
+
             <TextView
+                android:id="@+id/marcaProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Marca del Producto"
-                android:id="@+id/marcaProducto"/>
+                android:hint="Marca del Producto" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -86,10 +91,10 @@
                 android:textColor="#05aca3"
                 android:textSize="15dp"/>
             <TextView
+                android:id="@+id/unidadProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Unidad del Producto"
-                android:id="@+id/unidadProducto"/>
+                android:hint="Unidad del Producto" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -98,18 +103,19 @@
                 android:textStyle="bold"
                 android:textColor="#05aca3"
                 android:textSize="15dp"/>
+
             <TextView
+                android:id="@+id/precioProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Precio del Producto"
-                android:id="@+id/precioProducto"/>
-            <Button
+                android:hint="Precio del Producto"/>
 
+            <Button
+                android:id="@+id/botonPedido"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="Hacer pedido"
                 android:textColor="@color/white"
-                android:id="@+id/botonPedido"
                 android:background="@drawable/bnt_sesion_google"/>
 
         </LinearLayout>
@@ -142,26 +148,26 @@
                 android:background="@drawable/button_cerrar"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.875"
+                app:layout_constraintHorizontal_bias="0.837"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.005" />
+                app:layout_constraintVertical_bias="0.007" />
 
             <TextView
-                android:layout_width="368dp"
+                android:layout_width="360dp"
                 android:layout_height="40dp"
                 android:background="@drawable/fondo_item_producto2"
                 android:text="Hacer pedido del producto"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="22dp"
+                android:textSize="25dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.125"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.066" />
+                app:layout_constraintVertical_bias="0.061" />
 
             <EditText
                 android:id="@+id/DatoNombrePedido"
@@ -169,6 +175,7 @@
                 android:layout_height="40dp"
                 android:background="@drawable/fondo_edittex1"
                 android:drawablePadding="-30dp"
+                android:enabled="false"
                 android:hint="Nombre del producto"
                 android:paddingLeft="25dp"
                 android:textColor="@color/black"
@@ -178,8 +185,7 @@
                 app:layout_constraintHorizontal_bias="0.258"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.145"
-                android:enabled="false"/>
+                app:layout_constraintVertical_bias="0.145" />
 
             <EditText
                 android:id="@+id/DatoDescripcionPedido"
@@ -187,17 +193,17 @@
                 android:layout_height="40dp"
                 android:background="@drawable/fondo_edittex1"
                 android:drawablePadding="-30dp"
-                android:hint="Descripcion del producto"
+                android:enabled="false"
+                android:hint="Descripción del producto"
                 android:paddingLeft="25dp"
                 android:textColor="@color/black"
                 android:textColorHint="#05aca3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.241"
+                app:layout_constraintHorizontal_bias="0.25"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.217"
-                android:enabled="false"/>
+                app:layout_constraintVertical_bias="0.216" />
 
             <EditText
                 android:id="@+id/DatoMarcaPedido"
@@ -205,17 +211,17 @@
                 android:layout_height="40dp"
                 android:background="@drawable/fondo_edittex1"
                 android:drawablePadding="-30dp"
+                android:enabled="false"
                 android:hint="Marca del producto"
                 android:paddingLeft="25dp"
                 android:textColor="@color/black"
                 android:textColorHint="#05aca3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.258"
+                app:layout_constraintHorizontal_bias="0.266"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.363"
-                android:enabled="false"/>
+                app:layout_constraintVertical_bias="0.357" />
 
             <EditText
                 android:id="@+id/DatoUnidadPedido"
@@ -223,17 +229,17 @@
                 android:layout_height="40dp"
                 android:background="@drawable/fondo_edittex1"
                 android:drawablePadding="-30dp"
+                android:enabled="false"
                 android:hint="Unidad del producto"
                 android:paddingLeft="25dp"
                 android:textColor="@color/black"
                 android:textColorHint="#05aca3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.241"
+                app:layout_constraintHorizontal_bias="0.25"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.442"
-                android:enabled="false"/>
+                app:layout_constraintVertical_bias="0.427" />
 
             <EditText
                 android:id="@+id/DatoPrecioPedido"
@@ -241,6 +247,7 @@
                 android:layout_height="40dp"
                 android:background="@drawable/fondo_edittex1"
                 android:drawablePadding="-30dp"
+                android:enabled="false"
                 android:hint="Precio del producto"
                 android:inputType="numberDecimal"
                 android:paddingLeft="25dp"
@@ -248,11 +255,9 @@
                 android:textColorHint="#05aca3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.241"
+                app:layout_constraintHorizontal_bias="0.266"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.516"
-                android:enabled="false"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/DatoUbicacionPedido"
@@ -260,16 +265,16 @@
                 android:layout_height="40dp"
                 android:background="@drawable/fondo_edittex1"
                 android:drawablePadding="-30dp"
-                android:hint="Ubicacion de la entrega"
+                android:hint="Ubicación de la entrega"
                 android:paddingLeft="25dp"
                 android:textColor="@color/black"
                 android:textColorHint="#05aca3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.241"
+                app:layout_constraintHorizontal_bias="0.266"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.588" />
+                app:layout_constraintVertical_bias="0.57" />
 
             <EditText
                 android:id="@+id/DatoDestinatarioPedido"
@@ -283,10 +288,11 @@
                 android:textColorHint="#05aca3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.241"
+                app:layout_constraintHorizontal_bias="0.266"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.663" />
+                app:layout_constraintVertical_bias="0.641" />
+
 
             <EditText
                 android:id="@+id/DatoCantidadPedido"
@@ -301,10 +307,29 @@
                 android:textColorHint="#05aca3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.258"
+                app:layout_constraintHorizontal_bias="0.266"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.735" />
+                app:layout_constraintVertical_bias="0.71" />
+
+
+            <EditText
+                android:id="@+id/DatoNumero"
+                android:layout_width="340dp"
+                android:layout_height="40dp"
+                android:background="@drawable/fondo_edittex1"
+                android:drawablePadding="-30dp"
+                android:hint="Introduzca su teléfono"
+                android:inputType="number"
+                android:paddingLeft="25dp"
+                android:textColor="@color/black"
+                android:textColorHint="#05aca3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.78" />
 
             <EditText
                 android:id="@+id/DatoTipoPedido"
@@ -312,34 +337,36 @@
                 android:layout_height="40dp"
                 android:background="@drawable/fondo_edittex1"
                 android:drawablePadding="-30dp"
-                android:hint="Tipo del producto"
+                android:enabled="false"
+                android:hint="Tipo de producto"
                 android:paddingLeft="25dp"
                 android:textColor="@color/black"
                 android:textColorHint="#05aca3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.241"
+                app:layout_constraintHorizontal_bias="0.25"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.292"
-                android:enabled="false"/>
+                app:layout_constraintVertical_bias="0.285" />
 
             <EditText
                 android:id="@+id/EditCotizar"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:background="@drawable/fondo_item_producto"
+                android:enabled="false"
+                android:hint="0 bs."
                 android:textAlignment="center"
                 android:textColor="#05aca3"
-                android:enabled="false"
+                android:textColorHint="#05aca3"
                 android:textSize="22dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.144"
+                app:layout_constraintHorizontal_bias="0.824"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.844" />
+                app:layout_constraintVertical_bias="0.885" />
 
             <Button
                 android:id="@+id/buttonCotizar"
@@ -350,11 +377,10 @@
                 android:textColor="#ffff"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.784"
+                app:layout_constraintHorizontal_bias="0.064"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.845" />
-
+                app:layout_constraintVertical_bias="0.882" />
 
             <Button
                 android:id="@+id/buttonPagar"
@@ -365,10 +391,10 @@
                 android:textColor="#05aca3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.456"
+                app:layout_constraintHorizontal_bias="0.428"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.943" />
+                app:layout_constraintVertical_bias="0.976" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -452,8 +478,9 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.843" />
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.cardview.widget.CardView>
 
 </androidx.cardview.widget.CardView>

@@ -2,6 +2,7 @@ package com.example.pedidosapp
 
 import android.content.DialogInterface
 import android.graphics.drawable.Drawable
+import android.os.strictmode.CleartextNetworkViolation
 import android.text.Editable
 import android.util.Log
 import android.view.LayoutInflater
@@ -53,6 +54,7 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 //            Toast.makeText(activity,"ollo, soy ${item.nomProduct} ${item.tipProduct}", Toast.LENGTH_LONG).show()
 //            println("ollo, soy ${item.nomProduct} ${item.tipProduct}")
             holder.carViewEscg.visibility = View.VISIBLE
+
         }
 
         //para los botones de Delivery y Recoger
@@ -78,6 +80,10 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
             var prePedido:Float = item.preProduct
             holder.preDaP.setText(prePedido.toString())
+
+            var lugPedido:String = ""
+            holder.lugPed.setText(lugPedido)
+            holder.lugPed.setEnabled(true)
 
             //para cargar esos valores al carview del Delivery
         }
@@ -105,12 +111,15 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
             var uniPedido: String = item.uniProduct
             holder.uniDaP.setText(uniPedido)
 
-            var lugPedido:String = "En el supermercado"
+            var lugPedido:String = "Lugar: Jaime Mendoza #825"
             holder.lugPed.setText(lugPedido)
             holder.lugPed.setEnabled(false)
 
             var prePedido: Float = item.preProduct
             holder.preDaP.setText(prePedido.toString())
+
+
+
         }
             //para cargar esos valores al carview del Delivery
         //para los botones de Delivery y Recoger
@@ -123,7 +132,7 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
             val activity = it.context
             if(holder.cantPed.text.toString().isBlank()){
-                Toast.makeText(activity,"Por favor introduzaca una cantidad", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity,"Por favor introduzca una cantidad", Toast.LENGTH_LONG).show()
             }
             else{
 
