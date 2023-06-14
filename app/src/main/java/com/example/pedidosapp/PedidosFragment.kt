@@ -54,6 +54,7 @@ class PedidosFragment : Fragment() {
                     wallItem.idPedido = document.id
                     wallItem.fechaPedido = document["Fecha del pedido"].toString()
                     wallItem.tipoPagoPedido = document["Tipo de pago"].toString()
+                    wallItem.estadoEntregaPedido = document["Estado de la entrega"].toString()
 
                     binding.recyclerssPedido.adapter = adapterpedido
                     binding.recyclerssPedido.layoutManager = LinearLayoutManager(context)
