@@ -215,9 +215,6 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
                     "Fecha del pedido" to LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMM dd yyyy, hh:mm:ss a")).toString(),//para obtener la fecha de pedido xd
 
 
-
-
-
                 )
                 db.collection("Pedidos")
                     .add(Pedido)
