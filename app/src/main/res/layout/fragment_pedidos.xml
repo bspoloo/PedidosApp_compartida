@@ -1,91 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="4dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginEnd="4dp"
-    app:cardCornerRadius="30dp">
+    android:layout_height="match_parent"
+    tools:context=".PedidosFragment"
+    android:background="#E5FCFB">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/fondo_item_producto">
+        android:layout_width="372dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/fotoProducto"/>
-        <LinearLayout
-            android:layout_width="0dp"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:orientation="vertical">
+            android:background="@drawable/fondo_item_producto2"
+            android:text="Aquí todos tus pedidos realizados"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Id del pedido:"
-                android:textStyle="bold"
-                android:textColor="#05aca3"
-                android:textSize="15dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nombre del Producto"
-                android:id="@+id/nombreProducto"/>
-
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Marca del Producto:"
-                android:textStyle="bold"
-                android:textColor="#05aca3"
-                android:textSize="15dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Marca del Producto"
-                android:id="@+id/marcaProducto"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Unidad del Producto:"
-                android:textStyle="bold"
-                android:textColor="#05aca3"
-                android:textSize="15dp"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Precio del total en BS:"
-                android:textStyle="bold"
-                android:textColor="#05aca3"
-                android:textSize="15dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Precio del Producto"
-                android:id="@+id/precioProducto"/>
-
-            <Button
-                android:id="@+id/botonDetalles"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Detalles"
-                android:textColor="@color/white"
-                android:background="@drawable/bnt_sesion_google"/>
-
-
-        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerssPedido"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

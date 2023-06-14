@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.pedidosapp.databinding.ActivityAdminBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.type.Date
@@ -32,6 +33,8 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
     RecyclerView.Adapter<AdapterTipoProductos.ViewHolder>(){
 
     val db = FirebaseFirestore.getInstance()
+    private lateinit var tipoPago : String
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -90,6 +93,8 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
             holder.lugPed.setText(lugPedido)
             holder.lugPed.setEnabled(true)
 
+            tipoPago = "Tarjeta de credito/debito"
+
 
 
             //para cargar esos valores al carview del Delivery
@@ -124,6 +129,7 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
             var prePedido: Float = item.preProduct
             holder.preDaP.setText(prePedido.toString())
+            tipoPago = "En persona"
 
 
         }
@@ -137,6 +143,7 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
 
             val activity = it.context
+
             if(holder.cantPed.text.toString().isBlank()){
                 Toast.makeText(activity,"Por favor introduzca una cantidad", Toast.LENGTH_LONG).show()
             }
@@ -149,7 +156,6 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
                 var cotPedido: String = cotizar.toString() + " Bs"
                 holder.EditCoti.setText(cotPedido)
-
             }
 
         }
@@ -207,13 +213,11 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
                     "Precio" to holder.preDaP.text.toString().toFloat(),
                     "Cantidad" to holder.cantPed.text.toString().toInt(),
                     "Total a pagar" to holder.cantPed.text.toString(),
-                    "Total a pagar" to holder.cantPed.text.toString(),
                     "Email del destinatario" to correoElectronico,
-
-
                     "Numero de telefono" to holder.numPed.text.toString().toInt(),
                     "Fecha del pedido" to LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMM dd yyyy, hh:mm:ss a")).toString(),//para obtener la fecha de pedido xd
-
+                    "Tipo de pago" to tipoPago,
+                    "Estado de la entrega" to "En espera"
 
                 )
                 db.collection("Pedidos")
