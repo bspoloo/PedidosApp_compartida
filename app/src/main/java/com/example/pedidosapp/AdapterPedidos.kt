@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
@@ -47,6 +49,17 @@ class AdapterPedidos(private var items: MutableList<ItemPedido>):
         holder.estadoEntrega.text = item.estadoEntregaPedido
 
 
+        holder.botonCambiarEstado.setOnClickListener {
+
+            holder.cardViewCambiarEstado.visibility = View.VISIBLE
+        }
+        holder.buttonCerrarCE.setOnClickListener {
+
+            holder.cardViewCambiarEstado.visibility = View.GONE
+        }
+
+
+
     }
 
     override fun getItemCount(): Int {
@@ -73,6 +86,10 @@ class AdapterPedidos(private var items: MutableList<ItemPedido>):
         val estadoEntrega: TextView = view.findViewById(R.id.estadoEntrega)
 
         val botonCambiarEstado: Button = view.findViewById(R.id.botonCambiarEstado)
+        val buttonEntregado: Button = view.findViewById(R.id.buttonEntregado)
+        val buttonEspera: Button = view.findViewById(R.id.buttonEspera)
+        val cardViewCambiarEstado: CardView = view.findViewById(R.id.cardViewCambiarEstado)
+        val buttonCerrarCE: ImageButton = view.findViewById(R.id.buttonCerrarCE)
 
 
 
