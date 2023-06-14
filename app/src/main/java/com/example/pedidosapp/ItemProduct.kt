@@ -10,5 +10,6 @@ data class ItemProduct(
     var marcProduct : String = "",
     var uniProduct : String = "",
     var preProduct : Float = 0.0f ,
-    var imgProduct : String = ""
+    var imgProduct : String = "",
+    var NumUsu : Int = 0
 )
