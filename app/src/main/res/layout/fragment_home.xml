@@ -63,15 +63,15 @@
 
         <ImageButton
             android:id="@+id/buttonLicores"
-            android:layout_width="109dp"
-            android:layout_height="109dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:background="@drawable/a_licores"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.307"
+            app:layout_constraintHorizontal_bias="0.092"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.647" />
+            app:layout_constraintVertical_bias="0.669" />
 
         <ImageButton
             android:id="@+id/buttonLacteos"
@@ -123,15 +123,15 @@
 
         <ImageButton
             android:id="@+id/buttonEnlatados"
-            android:layout_width="109dp"
-            android:layout_height="109dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:background="@drawable/button_enlatados"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.715"
+            app:layout_constraintHorizontal_bias="0.917"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.647" />
+            app:layout_constraintVertical_bias="0.669" />
 
         <ImageButton
             android:id="@+id/buttonCarnes"
@@ -156,6 +156,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.35" />
+
+
+        <ImageButton
+            android:id="@+id/buttonLimpieza"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/admin_mode"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.669" />
+
+        
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
