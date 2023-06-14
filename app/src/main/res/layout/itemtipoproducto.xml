@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:visibility="gone"
+        android:visibility="visible"
         android:background="@drawable/fondo_item_producto">
 
         <ImageView
@@ -127,7 +127,7 @@
         android:layout_width="400dp"
         android:layout_height="720dp"
         android:background="@drawable/bnt_sesion_sin_google"
-        android:visibility="visible"
+        android:visibility="gone"
         app:cardCornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
