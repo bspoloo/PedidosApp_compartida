@@ -2,6 +2,7 @@ package com.example.pedidosapp
 
 import android.content.DialogInterface
 import android.graphics.drawable.Drawable
+import android.os.strictmode.CleartextNetworkViolation
 import android.text.Editable
 import android.util.Log
 import android.view.LayoutInflater
@@ -79,7 +80,9 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
             var prePedido:Float = item.preProduct
             holder.preDaP.setText(prePedido.toString())
 
-
+            var lugPedido:String = ""
+            holder.lugPed.setText(lugPedido)
+            holder.lugPed.setEnabled(true)
 
             //para cargar esos valores al carview del Delivery
         }
@@ -107,7 +110,7 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
             var uniPedido: String = item.uniProduct
             holder.uniDaP.setText(uniPedido)
 
-            var lugPedido:String = "En el supermercado"
+            var lugPedido:String = "Lugar: Jaime Mendoza #825"
             holder.lugPed.setText(lugPedido)
             holder.lugPed.setEnabled(false)
 
@@ -128,7 +131,7 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
             val activity = it.context
             if(holder.cantPed.text.toString().isBlank()){
-                Toast.makeText(activity,"Por favor introduzaca una cantidad", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity,"Por favor introduzca una cantidad", Toast.LENGTH_LONG).show()
             }
             else{
 
