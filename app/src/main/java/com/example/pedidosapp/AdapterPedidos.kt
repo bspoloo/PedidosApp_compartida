@@ -2,6 +2,7 @@ package com.example.pedidosapp
 
 import android.content.DialogInterface
 import android.graphics.drawable.Drawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +20,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class AdapterPedidos(private var items: MutableList<ItemPedido>):
     RecyclerView.Adapter<AdapterPedidos.ViewHolder>(){
+
+    val db = FirebaseFirestore.getInstance()
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -58,6 +61,56 @@ class AdapterPedidos(private var items: MutableList<ItemPedido>):
             holder.cardViewCambiarEstado.visibility = View.GONE
         }
 
+        holder.buttonEntregado.setOnClickListener {
+
+//            val Id = item.idPedido
+//            val activity = it.context
+//            Toast.makeText(activity,"Id del producto $Id", Toast.LENGTH_LONG).show()
+
+
+            val activity = it.context
+            val builder = AlertDialog.Builder(activity)
+
+            builder.setTitle("Cambiar estado de entrega")
+            builder.setMessage("Estas seguro de cambiar este pedido a Entregado?")
+            builder.setPositiveButton("si"){ dialogInterface : DialogInterface, i: Int->
+
+                val a = db.collection( "Pedidos").document(item.idPedido)
+                a
+                    .update("Estado de la entrega", "Entregado")
+                    .addOnSuccessListener {Log.w("TAG", "documento actualizado")}
+                    .addOnFailureListener { e-> Log.w("TAG", "error al actualizar")}
+
+                holder.cardViewCambiarEstado.visibility = View.GONE
+
+            }
+            builder.setNegativeButton("no"){ dialogInterface : DialogInterface, i: Int->
+                //no pasa nada xd
+            }
+            builder.show()
+        }
+        holder.buttonEspera.setOnClickListener {
+
+            val activity = it.context
+            val builder = AlertDialog.Builder(activity)
+
+            builder.setTitle("Cambiar estado de entrega")
+            builder.setMessage("Estas seguro de cambiar este pedido a Espera?")
+            builder.setPositiveButton("si"){ dialogInterface : DialogInterface, i: Int->
+
+                val a = db.collection( "Pedidos").document(item.idPedido)
+                a
+                    .update("Estado de la entrega", "En Espera")
+                    .addOnSuccessListener {Log.w("TAG", "documento actualizado")}
+                    .addOnFailureListener { e-> Log.w("TAG", "error al actualizar")}
+
+                holder.cardViewCambiarEstado.visibility = View.GONE
+            }
+            builder.setNegativeButton("no"){ dialogInterface : DialogInterface, i: Int->
+                //no pasa nada xd
+            }
+            builder.show()
+        }
 
 //
     }

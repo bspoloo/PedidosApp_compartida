@@ -151,7 +151,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Total a pagar el pedido:"
+                    android:hint="Email del destinatario:"
                     android:textStyle="bold"
                     android:textColor="#05aca3"
                     android:textSize="15dp"/>
