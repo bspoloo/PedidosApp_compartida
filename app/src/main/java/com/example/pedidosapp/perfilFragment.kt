@@ -57,10 +57,7 @@ class perfilFragment : Fragment() {
             val correoElectronico = user?.email                     //para obtener el email
             binding.PerfilNombre.text=correoElectronico
             binding.EmailPerfil.text=correoElectronico
-            var pedidosfragment = PedidosFragment()
-            binding.CuentaPedidos.setOnClickListener {
 
-            }
             binding.IniciarAdmin.setOnClickListener {
 
                 val i = Intent(context, ModeAdminActivity::class.java)

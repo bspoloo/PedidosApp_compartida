@@ -64,25 +64,6 @@
 
 
     <Button
-        android:id="@+id/Cuenta_pedidos"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="192dp"
-        android:background="@drawable/bnt_sesion_google"
-        android:clickable="true"
-        android:drawableStart="@drawable/pedidos_claro"
-        android:drawablePadding="-30dp"
-        android:paddingLeft="25dp"
-        android:text="Pedidos"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/Iniciar_Admin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
