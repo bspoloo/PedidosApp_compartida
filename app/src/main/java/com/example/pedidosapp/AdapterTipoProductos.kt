@@ -21,9 +21,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.type.Date
 import com.google.type.DateTime
 import java.math.BigDecimal
 import java.time.Instant
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
     RecyclerView.Adapter<AdapterTipoProductos.ViewHolder>(){
@@ -209,7 +212,11 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
 
                     "Numero de telefono" to holder.numPed.text.toString().toInt(),
-                    "Fecha del pedido" to Instant.now().toString(),
+                    "Fecha del pedido" to LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMM dd yyyy, hh:mm:ss a")).toString(),//para obtener la fecha de pedido xd
+
+
+
+
 
                 )
                 db.collection("Pedidos")
