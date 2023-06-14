@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable
 
 data class ItemPedido(
     var idPedido : String = "",
+    var nomProPedido :String = "",
     var tipPedido : String = "",
     var marcPedido : String = "",
     var uniPedido: String = "",

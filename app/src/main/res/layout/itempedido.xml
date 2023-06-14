@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        app:cardCornerRadius="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/fondo_item_producto"
+            android:drawablePadding="-30dp"
+            android:paddingLeft="20dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ID del pedido:"
+                    android:textStyle="bold"
+                    android:textColor="#05aca3"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ID del Pedido"
+                    android:id="@+id/idPedido"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre del producto:"
+                    android:textStyle="bold"
+                    android:textColor="#05aca3"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre del producto:"
+                    android:id="@+id/nombreProductoPedido"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tipo del producto:"
+                    android:textStyle="bold"
+                    android:textColor="#05aca3"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tipo del producto:"
+                    android:id="@+id/tipoProductoPedido"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Marca del producto:"
+                    android:textStyle="bold"
+                    android:textColor="#05aca3"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Marca del producto:"
+                    android:id="@+id/marcaProductoPedido"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Unidad del producto:"
+                    android:textStyle="bold"
+                    android:textColor="#05aca3"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Unidad del producto:"
+                    android:id="@+id/unidadProductoPedido"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ubicacion de entrega:"
+                    android:textStyle="bold"
+                    android:textColor="#05aca3"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ubicacion del pedido:"
+                    android:id="@+id/ubicacionPedido"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre del destinatario:"
+                    android:textStyle="bold"
+                    android:textColor="#05aca3"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre del destinatario"
+                    android:id="@+id/nombreDestinatarioPedido"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Precio del producto:"
+                    android:textStyle="bold"
+                    android:textColor="#05aca3"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Precio del Producto"
+                    android:id="@+id/precioProductoPedido"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Cantidad del pedido:"
+                    android:textStyle="bold"
+                    android:textColor="#05aca3"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Cantidad del pedido"
+                    android:id="@+id/cantidadPedido"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Total a pagar el pedido:"
+                    android:textStyle="bold"
+                    android:textColor="#05aca3"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Total a pagar el pedido"
+                    android:id="@+id/totalPagoPedido"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Total a pagar el pedido:"
+                    android:textStyle="bold"
+                    android:textColor="#05aca3"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email del destinatario"
+                    android:id="@+id/emailDestinatarioPedido"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Numero de telefono del Destinatario:"
+                    android:textStyle="bold"
+                    android:textColor="#05aca3"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Numero de telefono"
+                    android:id="@+id/telfDestinatarioPedido"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pedido efectuado el:"
+                    android:textStyle="bold"
+                    android:textColor="#05aca3"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha del Pedido efectuado"
+                    android:id="@+id/fechaPedido"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tipo de pago"
+                    android:textStyle="bold"
+                    android:textColor="#05aca3"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pago del Producto"
+                    android:id="@+id/pagoPedido"/>
+
+                <TextView
+                    android:id="@+id/estadoEntrega"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bnt_sesion_google"
+                    android:text="en espera"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/botonCambiarEstado"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:textColor="#05aca3"
+                    android:text="Cambiar estado del pedido"
+                    android:background="@drawable/bnt_sesion_sin_google"/>
+
+            </LinearLayout>
+        </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -45,6 +45,10 @@ class AdminActivity : AppCompatActivity() {
             val i = Intent(this, VerTodosProductosActivity::class.java)
             startActivity(i)
         }
+        binding.buttonVerTodosPedidos.setOnClickListener{
+            val i = Intent(this, VerTodosPedidosActivity::class.java)
+            startActivity(i)
+        }
 
 
 
