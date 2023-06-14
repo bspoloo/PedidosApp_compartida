@@ -52,6 +52,7 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 //            Toast.makeText(activity,"ollo, soy ${item.nomProduct} ${item.tipProduct}", Toast.LENGTH_LONG).show()
 //            println("ollo, soy ${item.nomProduct} ${item.tipProduct}")
             holder.carViewEscg.visibility = View.VISIBLE
+
         }
 
         //para los botones de Delivery y Recoger
@@ -77,6 +78,8 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
             var prePedido:Float = item.preProduct
             holder.preDaP.setText(prePedido.toString())
+
+
 
             //para cargar esos valores al carview del Delivery
         }
@@ -110,6 +113,9 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
             var prePedido: Float = item.preProduct
             holder.preDaP.setText(prePedido.toString())
+
+
+
         }
             //para cargar esos valores al carview del Delivery
         //para los botones de Delivery y Recoger
