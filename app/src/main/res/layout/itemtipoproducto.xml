@@ -16,10 +16,10 @@
         android:background="@drawable/fondo_item_producto">
 
         <ImageView
+            android:id="@+id/fotoProducto"
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/fotoProducto"/>
+            android:layout_weight="1" />
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -33,11 +33,12 @@
                 android:textStyle="bold"
                 android:textColor="#05aca3"
                 android:textSize="15dp"/>
+
             <TextView
+                android:id="@+id/nombreProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre del Producto"
-                android:id="@+id/nombreProducto"/>
+                android:hint="Nombre del Producto" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -46,11 +47,12 @@
                 android:textStyle="bold"
                 android:textColor="#05aca3"
                 android:textSize="15dp"/>
+
             <TextView
+                android:id="@+id/descripcionProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Descripcion del Producto"
-                android:id="@+id/descripcionProducto"/>
+                android:hint="Descripcion del Producto" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -59,11 +61,12 @@
                 android:textStyle="bold"
                 android:textColor="#05aca3"
                 android:textSize="15dp"/>
+
             <TextView
+                android:id="@+id/tipoProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tipo del Producto"
-                android:id="@+id/tipoProducto"/>
+                android:hint="Tipo del Producto" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -72,11 +75,12 @@
                 android:textStyle="bold"
                 android:textColor="#05aca3"
                 android:textSize="15dp"/>
+
             <TextView
+                android:id="@+id/marcaProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Marca del Producto"
-                android:id="@+id/marcaProducto"/>
+                android:hint="Marca del Producto" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -86,10 +90,10 @@
                 android:textColor="#05aca3"
                 android:textSize="15dp"/>
             <TextView
+                android:id="@+id/unidadProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Unidad del Producto"
-                android:id="@+id/unidadProducto"/>
+                android:hint="Unidad del Producto" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -98,18 +102,19 @@
                 android:textStyle="bold"
                 android:textColor="#05aca3"
                 android:textSize="15dp"/>
+
             <TextView
+                android:id="@+id/precioProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Precio del Producto"
-                android:id="@+id/precioProducto"/>
-            <Button
+                android:hint="Precio del Producto"/>
 
+            <Button
+                android:id="@+id/botonPedido"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="Hacer pedido"
                 android:textColor="@color/white"
-                android:id="@+id/botonPedido"
                 android:background="@drawable/bnt_sesion_google"/>
 
         </LinearLayout>
