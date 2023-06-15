@@ -23,7 +23,7 @@ class VerTodosPedidosActivity : AppCompatActivity() {
         llamarrecyclerview()
     }
 
-    private fun llamarrecyclerview() {
+    public fun llamarrecyclerview() {
 
         pedidosList = ArrayList()
         adapterpedido = AdapterPedidos(pedidosList)

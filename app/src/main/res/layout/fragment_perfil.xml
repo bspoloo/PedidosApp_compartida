@@ -7,7 +7,6 @@
     tools:context=".perfilFragment"
     android:background="#E5FCFB">
 
-
     <ImageView
         android:id="@+id/imagen_perfil"
         android:layout_width="80dp"
@@ -18,7 +17,6 @@
         android:scaleType="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
-
 
     <TextView
         android:id="@+id/Perfil_nombre"
@@ -67,7 +65,7 @@
         android:id="@+id/Iniciar_Admin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="256dp"
+        android:layout_marginTop="192dp"
         android:background="@drawable/bnt_sesion_google"
         android:clickable="true"
         android:drawableStart="@drawable/baseline_admin_panel_settings_24"

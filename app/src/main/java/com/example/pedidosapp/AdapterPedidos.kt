@@ -23,6 +23,8 @@ class AdapterPedidos(private var items: MutableList<ItemPedido>):
     RecyclerView.Adapter<AdapterPedidos.ViewHolder>(){
 
     val db = FirebaseFirestore.getInstance()
+
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
