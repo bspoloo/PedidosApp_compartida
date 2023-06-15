@@ -81,6 +81,7 @@ class AuthActivity : AppCompatActivity() {
             }
             catch (e:ApiException){
                 Log.w("Tag","google sign in failed $e")
+                Toast.makeText(this,"loggeo fallido", Toast.LENGTH_LONG).show()
             }
 
         }

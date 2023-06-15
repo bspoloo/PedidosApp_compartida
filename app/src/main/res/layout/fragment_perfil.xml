@@ -65,7 +65,6 @@
         android:id="@+id/Iniciar_Admin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="192dp"
         android:background="@drawable/bnt_sesion_google"
         android:clickable="true"
         android:drawableStart="@drawable/baseline_admin_panel_settings_24"
@@ -75,10 +74,12 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
 
     <Button
         android:id="@+id/buttonsesion"
@@ -96,5 +97,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.930" />
+
+    <Button
+        android:id="@+id/verIntegrantes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bnt_sesion_google"
+        android:clickable="true"
+        android:drawablePadding="-30dp"
+
+        android:text="Integrantes encargados en el desarrollo"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.382" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

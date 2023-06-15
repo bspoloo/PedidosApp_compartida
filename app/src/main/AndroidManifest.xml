@@ -17,6 +17,9 @@
         android:theme="@style/Theme.PedidosApp"
         tools:targetApi="31">
         <activity
+            android:name=".IntegrantesActivity"
+            android:exported="false" />
+        <activity
             android:name=".VerTodosPedidosActivity"
             android:exported="false" />
         <activity

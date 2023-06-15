@@ -63,6 +63,10 @@ class perfilFragment : Fragment() {
                 val i = Intent(context, ModeAdminActivity::class.java)
                 startActivity(i)
             }
+            binding.verIntegrantes.setOnClickListener {
+                val i = Intent(context, IntegrantesActivity::class.java)
+                startActivity(i)
+            }
 
             return binding.root
 
