@@ -161,7 +161,7 @@ class AdminActivity : AppCompatActivity() {
                 }
                 .addOnFailureListener {e-> Log.w("Tag","Error $e")}
 
-
+//prueba
             binding.DatoProducto.text.clear()
             binding.DatoDescripcion.text.clear()
             binding.DatoTipo.text.clear()
