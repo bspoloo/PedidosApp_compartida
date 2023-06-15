@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
 
+
 class AdapterPedidos(private var items: MutableList<ItemPedido>):
     RecyclerView.Adapter<AdapterPedidos.ViewHolder>(){
 
@@ -54,65 +55,54 @@ class AdapterPedidos(private var items: MutableList<ItemPedido>):
 
         holder.botonCambiarEstado.setOnClickListener {
 
-            holder.cardViewCambiarEstado.visibility = View.VISIBLE
-        }
-        holder.buttonCerrarCE.setOnClickListener {
+                val activity = it.context
+                val builder = AlertDialog.Builder(activity)
 
-            holder.cardViewCambiarEstado.visibility = View.GONE
-        }
+                builder.setTitle("Cambiar el estado del pedido")
+                builder.setMessage("Deseas cambiar el estado del pedido a:")
+                builder.setPositiveButton("Entregado"){ dialogInterface : DialogInterface, i: Int->
 
-        holder.buttonEntregado.setOnClickListener {
+                    val a = db.collection( "Pedidos").document(item.idPedido)
+                    a
+                        .update("Estado de la entrega", "Entregado")
+                        .addOnSuccessListener {
 
-//            val Id = item.idPedido
-//            val activity = it.context
-//            Toast.makeText(activity,"Id del producto $Id", Toast.LENGTH_LONG).show()
+                            val builder = AlertDialog.Builder(activity)
+
+                            builder.setTitle("Cambio de estado")
+                            builder.setMessage("El cambio de estado de entrega fue realizado")
+                            builder.setPositiveButton("ok"){ dialogInterface : DialogInterface, i: Int->
+
+                            }
+                            builder.show()
+
+                        }
+                        .addOnFailureListener { e-> Log.w("TAG", "error al actualizar")}
+                }
+                builder.setNegativeButton("En espera"){ dialogInterface : DialogInterface, i: Int->
+
+                    val a = db.collection( "Pedidos").document(item.idPedido)
+                    a
+                        .update("Estado de la entrega", "En Espera")
+                        .addOnSuccessListener {
+
+                            val builder = AlertDialog.Builder(activity)
+
+                            builder.setTitle("Cambio de estado")
+                            builder.setMessage("El cambio de estado de entrega fue realizado")
+                            builder.setPositiveButton("ok"){ dialogInterface : DialogInterface, i: Int->
+
+                            }
+                            builder.show()
+
+                        }
+                        .addOnFailureListener { e-> Log.w("TAG", "error al actualizar")}
+                }
+                builder.show()
 
 
-            val activity = it.context
-            val builder = AlertDialog.Builder(activity)
-
-            builder.setTitle("Cambiar estado de entrega")
-            builder.setMessage("Estas seguro de cambiar este pedido a Entregado?")
-            builder.setPositiveButton("si"){ dialogInterface : DialogInterface, i: Int->
-
-                val a = db.collection( "Pedidos").document(item.idPedido)
-                a
-                    .update("Estado de la entrega", "Entregado")
-                    .addOnSuccessListener {Log.w("TAG", "documento actualizado")}
-                    .addOnFailureListener { e-> Log.w("TAG", "error al actualizar")}
-
-                holder.cardViewCambiarEstado.visibility = View.GONE
-
-            }
-            builder.setNegativeButton("no"){ dialogInterface : DialogInterface, i: Int->
-                //no pasa nada xd
-            }
-            builder.show()
-        }
-        holder.buttonEspera.setOnClickListener {
-
-            val activity = it.context
-            val builder = AlertDialog.Builder(activity)
-
-            builder.setTitle("Cambiar estado de entrega")
-            builder.setMessage("Estas seguro de cambiar este pedido a Espera?")
-            builder.setPositiveButton("si"){ dialogInterface : DialogInterface, i: Int->
-
-                val a = db.collection( "Pedidos").document(item.idPedido)
-                a
-                    .update("Estado de la entrega", "En Espera")
-                    .addOnSuccessListener {Log.w("TAG", "documento actualizado")}
-                    .addOnFailureListener { e-> Log.w("TAG", "error al actualizar")}
-
-                holder.cardViewCambiarEstado.visibility = View.GONE
-            }
-            builder.setNegativeButton("no"){ dialogInterface : DialogInterface, i: Int->
-                //no pasa nada xd
-            }
-            builder.show()
         }
 
-//
     }
 
     override fun getItemCount(): Int {
@@ -139,13 +129,5 @@ class AdapterPedidos(private var items: MutableList<ItemPedido>):
         val estadoEntrega: TextView = view.findViewById(R.id.estadoEntrega)
 
         val botonCambiarEstado: Button = view.findViewById(R.id.botonCambiarEstado)
-        val buttonEntregado: Button = view.findViewById(R.id.buttonEntregado)
-        val buttonEspera: Button = view.findViewById(R.id.buttonEspera)
-        val cardViewCambiarEstado: CardView = view.findViewById(R.id.cardViewCambiarEstado)
-        val buttonCerrarCE: ImageButton = view.findViewById(R.id.buttonCerrarCE)
-
-
-
     }
-
 }

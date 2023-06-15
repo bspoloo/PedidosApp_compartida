@@ -93,9 +93,7 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
             holder.lugPed.setText(lugPedido)
             holder.lugPed.setEnabled(true)
 
-            tipoPago = "Tarjeta de credito/debito"
-
-
+            tipoPago = "En persona"
 
             //para cargar esos valores al carview del Delivery
         }
@@ -129,7 +127,7 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
             var prePedido: Float = item.preProduct
             holder.preDaP.setText(prePedido.toString())
-            tipoPago = "En persona"
+            tipoPago = "Tarjeta de credito/debito"
 
 
         }
@@ -179,6 +177,22 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
             val user = FirebaseAuth.getInstance().currentUser       //para obtener el usuario actual
             val correoElectronico = user?.email                     //para obtener el email
 
+            if(tipoPago.equals("Tarjeta de credito/debito")){
+
+                    val builder = AlertDialog.Builder(activity)
+                    builder.setTitle("Error de tranasferencia por pago en persona")
+                    builder.setMessage("Por el momento el pago por persona se encuentra deshabilitado,ya que se requiere pago por tarjeta de credito/debito, esto debido a razones legales y de licencia")
+                    builder.setPositiveButton("ok"){ dialogInterface : DialogInterface, i: Int->
+
+                        holder.carViewP.visibility = View.GONE
+                    }
+                    builder.show()
+
+
+            }
+            else{
+
+
             if(holder.cantPed.text.toString().isBlank()){
                 Toast.makeText(activity,"Por favor introduzaca una cantidad", Toast.LENGTH_LONG).show()
             }
@@ -226,6 +240,8 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
                         Toast.makeText(activity, "Su pedido fue realizado exitosamente", Toast.LENGTH_LONG).show()
                         println("agregado correctamente xd")
 
+                        holder.carViewP.visibility = View.GONE
+
                     }
                     .addOnFailureListener {e-> Log.w("Tag","Error $e")}
 
@@ -234,7 +250,7 @@ class AdapterTipoProductos(private var items: MutableList<ItemProduct>):
 
         }
 
-
+        }
         // para el boton de cotizar
 
     }
